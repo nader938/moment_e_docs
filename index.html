@@ -5,88 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>moment·e — Research EMA Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+<div class="announcement-bar">
+  🎉 moment·e v13.04 is live on iOS and Android —
+  <a href="about.html#version">See what's new</a>
+</div>
+
 <nav class="navbar">
   <a href="index.html" class="navbar-logo">moment<span class="dot">·</span>e <span class="version">v13.04</span></a>
   <div class="navbar-links">
-    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="install.html">Install</a>
     <a href="using.html">Using the App</a>
+    <a href="report.html">Report a Bug</a>
   </div>
   <div class="navbar-right">
-    <a href="report.html" class="navbar-links btn-report">Report a Bug</a>
+    <a href="https://github.com/nader938/moment_e_issues" class="navbar-github" title="GitHub" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+    </a>
+    <a href="install.html" class="btn-report">Get the App</a>
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
-  <h1>Research-grade EMA,<br><span class="highlight">built for the real world</span></h1>
-  <p>moment·e captures surveys, cognitive tasks, and physiological data — wherever participants are in their daily lives.</p>
-  <div class="hero-buttons">
-    <a href="install.html" class="btn-primary">Get the App</a>
-    <a href="about.html" class="btn-secondary">Learn More</a>
+  <div class="hero-inner">
+    <span class="hero-tagline">CUTA Lab · San Diego State University</span>
+    <h1>Real-time EMA research,<br><span class="grad">built for the real world</span></h1>
+    <p>moment·e captures surveys, cognitive tasks, and physiological data — wherever participants are in their daily lives. iOS &amp; Android.</p>
+    <div class="hero-buttons">
+      <a href="install.html" class="btn-primary">📲 Get the App</a>
+      <a href="about.html" class="btn-secondary">Learn more →</a>
+    </div>
   </div>
 </section>
 
-<section class="features">
+<!-- Dark features section -->
+<section class="features-section">
   <h2>Everything you need for EMA research</h2>
+  <p class="section-sub">Designed for clinical studies. Built to survive daily life.</p>
   <div class="features-grid">
     <div class="feature-card">
       <span class="feature-icon">📱</span>
       <h3>iOS &amp; Android</h3>
-      <p>Native apps on both platforms. Works on iPhone, iPad, and Android devices running recent OS versions.</p>
+      <p>Native apps on both platforms — iPhone, iPad, and Android devices. One unified Flutter codebase.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">🔒</span>
       <h3>Encrypted &amp; Secure</h3>
-      <p>All survey responses, sensor data, and task results are AES-256 encrypted before upload to secure cloud storage.</p>
+      <p>All responses, sensor readings, and task results are AES-256 encrypted before upload to AWS S3.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">🧠</span>
       <h3>Cognitive Tasks</h3>
-      <p>Includes validated cognitive assessments: Flanker, CEQI, Stop Signal, Scrambled Sentences, and more.</p>
+      <p>Validated assessments built in: Flanker, CEQI, Stop Signal, Scrambled Sentences, and more.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">📊</span>
-      <h3>Real-Time Data</h3>
-      <p>Sensor readings, HRV, accelerometer, and GPS captured continuously and synced to S3 for analysis.</p>
+      <h3>Real-Time Sensor Data</h3>
+      <p>HRV, accelerometer, and GPS captured continuously and synced to S3 for downstream analysis.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">⏰</span>
       <h3>EMA Scheduling</h3>
-      <p>Configurable daily prompt schedules push notifications at the right moments throughout the day.</p>
+      <p>Configurable daily prompt windows push notifications at the right moments throughout the day.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">🏥</span>
       <h3>Clinical Research</h3>
-      <p>Designed for OCD, GAD, Social Phobia, and related mental health research studies at SDSU CUTA Lab.</p>
+      <p>Designed for OCD, GAD, Social Phobia, and related longitudinal mental health studies at SDSU.</p>
     </div>
   </div>
 </section>
 
-<section style="background: var(--bg-alt); padding: 64px 24px; text-align: center; border-top: 1px solid var(--border);">
-  <h2 style="font-size:28px; font-weight:800; margin-bottom:12px;">Ready to get started?</h2>
-  <p style="color:var(--text-muted); margin-bottom:28px; font-size:17px;">Download moment·e on iOS or Android and join your research study.</p>
-  <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+<!-- CTA strip -->
+<section class="cta-strip">
+  <h2>Ready to get started?</h2>
+  <p>Download moment·e on iOS or Android and join your research study.</p>
+  <div class="btn-row" style="justify-content:center;">
     <a href="install.html#ios" class="btn-primary">📱 iOS Install Guide</a>
     <a href="install.html#android" class="btn-secondary">🤖 Android Install Guide</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="install.html">Install</a>
-    <a href="using.html">Using the App</a>
-    <a href="report.html">Report a Bug</a>
-    <a href="https://github.com/nader938/moment_e_issues">GitHub</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">moment<span class="dot">·</span>e</span>
+      <p>A clinical research platform for ecological momentary assessment, developed at SDSU CUTA Lab.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Docs</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="using.html">Using the App</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="install.html#ios">iOS Guide</a></li>
+        <li><a href="install.html#android">Android Guide</a></li>
+        <li><a href="install.html#requirements">Requirements</a></li>
+        <li><a href="about.html#version">Version History</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="https://github.com/nader938/moment_e_issues">GitHub Issues</a></li>
+        <li><a href="https://github.com/nader938/moment_e_issues/issues/new">Report a Bug</a></li>
+        <li><a href="about.html#team">The Team</a></li>
+        <li><a href="about.html#research">Research Context</a></li>
+      </ul>
+    </div>
   </div>
-  <p>© 2026 CUTA Lab, San Diego State University · moment·e v13.04</p>
+  <div class="footer-bottom">
+    <span>© 2026 CUTA Lab, San Diego State University</span>
+    <span>moment·e v13.04 · Built with ❤️ at SDSU</span>
+  </div>
 </footer>
 
 </body>
