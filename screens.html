@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Screens — moment·e</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">moment<span class="dot">·</span>e <span class="version">v13.04</span></a>
+  <div class="navbar-links">
+    <a href="about.html">About</a>
+    <a href="install.html">Install</a>
+    <a href="using.html">Using the App</a>
+    <a href="screens.html" class="active">App Screens</a>
+    <a href="report.html">Report a Bug</a>
+  </div>
+  <div class="navbar-right">
+    <a href="https://github.com/nader938/moment_e_issues" class="navbar-github" title="GitHub" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <a href="report.html" class="btn-report">Report a Bug</a>
+  </div>
+</nav>
+
+<div class="docs-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">App Screens</div>
+      <a href="#home" class="active">Home Screen</a>
+      <a href="#cognitive">Cognitive Tasks</a>
+      <a href="#questionnaire">Questionnaires</a>
+      <a href="#sst">Scrambled Sentences</a>
+      <a href="#profile">Profile &amp; Settings</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Docs</div>
+      <a href="using.html">Using the App</a>
+      <a href="install.html">Install Guide</a>
+      <a href="report.html">Report a Bug</a>
+    </div>
+  </aside>
+
+  <main class="docs-content" style="max-width: 900px;">
+    <nav class="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">App Screens</span>
+    </nav>
+
+    <h1>App Screens</h1>
+    <p class="subtitle">A visual walkthrough of every screen in moment·e v13.04 — what each button does and when to use it.</p>
+
+    <!-- ═══════════════════════════════════ HOME SCREEN ═══ -->
+    <h2 id="home">Home Screen</h2>
+    <p>After signing in, the Home screen is your central hub. It shows a live welcome card with your heart-rate sensor reading and six quick-access tiles for every major module.</p>
+
+    <div class="screen-showcase">
+      <!-- Phone mockup -->
+      <div class="phone-frame">
+        <div class="phone-screen" style="display:flex; flex-direction:column;">
+          <div class="mock-statusbar"><span>9:41</span><span>●●●●</span></div>
+          <div class="mock-appbar">
+            <span>moment·e</span>
+            <span style="font-size:10px; opacity:.7;">☰</span>
+          </div>
+          <div class="mock-body" style="overflow:hidden; flex:1;">
+            <div class="mock-welcome">
+              <div class="mw-sub">Welcome back,</div>
+              <div class="mw-name">Participant</div>
+              <div class="mw-pill">❤️ — BPM</div>
+            </div>
+            <div class="mock-section-title">Quick Access</div>
+            <div class="mock-grid">
+              <div class="mock-card">
+                <div class="mock-card-icon" style="background:rgba(26,82,118,.12);">🧠</div>
+                <div class="mock-card-label">Fearless</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-icon" style="background:rgba(125,60,152,.12);">📈</div>
+                <div class="mock-card-label">My Graph</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-icon" style="background:rgba(27,79,114,.12);">📊</div>
+                <div class="mock-card-label">Cognitive Tasks</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-icon" style="background:rgba(17,122,101,.12);">📋</div>
+                <div class="mock-card-label">Questionnaires</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-icon" style="background:rgba(125,60,152,.12);">💓</div>
+                <div class="mock-card-label">Sensor Data</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-icon" style="background:rgba(26,82,118,.12);">🤖</div>
+                <div class="mock-card-label">AI Agent</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caption + button list -->
+      <div class="screen-caption">
+        <h3>Quick Access buttons</h3>
+        <p>Tap any tile to go directly to that module. The welcome card at the top shows your live BPM from the wrist sensor while it's active.</p>
+        <ul class="btn-list">
+          <li>
+            <span class="btn-chip"><span class="chip-dot" style="background:#1a5276;"></span>Fearless</span>
+            <span class="btn-desc">Opens your study's exposure or hierarchy module (or a direct link if your study group has a URL configured).</span>
+          </li>
+          <li>
+            <span class="btn-chip"><span class="chip-dot" style="background:#7d3c98;"></span>My Graph</span>
+            <span class="btn-desc">View your personal data graphs — survey scores, sensor readings, and task performance over time.</span>
+          </li>
+          <li>
+            <span class="btn-chip"><span class="chip-dot" style="background:#1b4f72;"></span>Cognitive Tasks</span>
+            <span class="btn-desc">Launch any of the four cognitive assessments: Heartbeat Counting, Flanker, Scrambled Sentences, or Word-Sentence Association.</span>
+          </li>
+          <li>
+            <span class="btn-chip"><span class="chip-dot" style="background:#117a65;"></span>Questionnaires</span>
+            <span class="btn-desc">Complete scheduled or ad-hoc survey questionnaires assigned to your study group.</span>
+          </li>
+          <li>
+            <span class="btn-chip"><span class="chip-dot" style="background:#7d3c98;"></span>Sensor Data</span>
+            <span class="btn-desc">View live and historical sensor readings: HRV, accelerometer, GPS, and heart rate from the wrist sensor.</span>
+          </li>
+          <li>
+            <span class="btn-chip"><span class="chip-dot" style="background:#1a5276;"></span>AI Agent</span>
+            <span class="btn-desc">Coming soon — an AI assistant for participants to ask study-related questions.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════ COGNITIVE TASKS ═══ -->
+    <h2 id="cognitive">Cognitive Tasks</h2>
+    <p>Tap <strong>Cognitive Tasks</strong> on the home screen to reach the task hub. Four validated assessments are available, grouped by what they measure.</p>
+
+    <div class="screen-showcase reverse">
+      <!-- Phone mockup -->
+      <div class="phone-frame">
+        <div class="phone-screen" style="display:flex; flex-direction:column;">
+          <div class="mock-statusbar"><span>9:41</span><span>●●●●</span></div>
+          <div class="mock-appbar"><span>Cognitive Tasks</span></div>
+          <div class="mock-task-list" style="overflow:hidden; flex:1;">
+
+            <div class="mock-task-section-hdr">Interoception</div>
+            <div class="mock-task-card">
+              <div class="mock-task-icon" style="background:rgba(26,82,118,.12);">❤️</div>
+              <div>
+                <div class="mock-task-title">Heartbeat Counting Task</div>
+                <div class="mock-task-desc">Count your heartbeats across 6 timed intervals.</div>
+                <div class="mock-task-metrics">Accuracy · Awareness · Confidence</div>
+              </div>
+            </div>
+
+            <div class="mock-task-section-hdr">Reaction Time</div>
+            <div class="mock-task-card">
+              <div class="mock-task-icon" style="background:rgba(27,79,114,.12);">⬅️</div>
+              <div>
+                <div class="mock-task-title">Flanker Task</div>
+                <div class="mock-task-desc">Identify the central arrow among distractors.</div>
+                <div class="mock-task-metrics">Accuracy · RT · Flanker Effect</div>
+              </div>
+            </div>
+
+            <div class="mock-task-section-hdr">Cognitive Bias</div>
+            <div class="mock-task-card">
+              <div class="mock-task-icon" style="background:rgba(17,122,101,.12);">🔤</div>
+              <div>
+                <div class="mock-task-title">Scrambled Sentence Task</div>
+                <div class="mock-task-desc">Rearrange words into a grammatical sentence.</div>
+                <div class="mock-task-metrics">Valence · Completion Time</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Caption -->
+      <div class="screen-caption">
+        <h3>The four cognitive tasks</h3>
+        <p>Each task targets a different cognitive domain. Your results are encrypted and synced to the study server automatically after submission.</p>
+        <ul class="btn-list">
+          <li>
+            <span class="btn-chip">❤️ Heartbeat Counting</span>
+            <span class="btn-desc">Count your heartbeats silently across 6 timed intervals without touching your pulse. Measures <em>interoceptive accuracy</em> and metacognitive confidence. Section: <strong>Interoception</strong>.</span>
+          </li>
+          <li>
+            <span class="btn-chip">⬅️ Flanker Task</span>
+            <span class="btn-desc">Tap the direction the <em>center</em> arrow points, ignoring the surrounding arrows. Measures response inhibition and selective attention speed. Section: <strong>Reaction Time</strong>.</span>
+          </li>
+          <li>
+            <span class="btn-chip">🔤 Scrambled Sentences</span>
+            <span class="btn-desc">Tap words in the correct order to form a grammatical sentence from a scrambled list. Assesses interpretation bias toward OCD-relevant themes. Section: <strong>Cognitive Bias</strong>.</span>
+          </li>
+          <li>
+            <span class="btn-chip">🔗 Word-Sentence Association</span>
+            <span class="btn-desc">Decide whether a word matches a sentence's meaning. Measures and retrains interpretation bias using CBM-I. Section: <strong>Cognitive Bias</strong>.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ QUESTIONNAIRE SCREEN ═══ -->
+    <h2 id="questionnaire">Questionnaire Screen</h2>
+    <p>Survey questions appear one at a time on a clean screen. Each question shows a Likert-scale list of response options — tap your answer and continue.</p>
+
+    <div class="screen-showcase">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <img src="img/screen_survey_question.jpeg" alt="Survey question screen showing Likert scale options 0–4" loading="lazy">
+        </div>
+      </div>
+
+      <div class="screen-caption">
+        <h3>Answering a question</h3>
+        <p>Questions are displayed one at a time with numbered response options. Tap a row to select your answer, then tap <strong>Next</strong> to continue.</p>
+        <ul class="btn-list">
+          <li>
+            <span class="btn-chip">0–4 Scale</span>
+            <span class="btn-desc">Most questions use a 5-point scale from <em>Not at all</em> to <em>Extremely</em>. The exact labels depend on the question type.</span>
+          </li>
+          <li>
+            <span class="btn-chip">Next →</span>
+            <span class="btn-desc">Advances to the next question. Appears in the lower-right corner once you've made a selection.</span>
+          </li>
+          <li>
+            <span class="btn-chip">Progress bar</span>
+            <span class="btn-desc">A thin bar at the top shows how far through the questionnaire you are.</span>
+          </li>
+        </ul>
+        <div class="admonition tip" style="margin-top:16px;">
+          <div class="admonition-heading"><span>💡</span> Offline support</div>
+          <div class="admonition-body">You can answer questions without internet. Responses are stored locally and uploaded automatically when you reconnect.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ SCRAMBLED SENTENCE TASK ═══ -->
+    <h2 id="sst">Scrambled Sentence Task</h2>
+    <p>The Scrambled Sentence Task (SST) presents a list of words. Tap them in the correct order to form a grammatical sentence. A countdown timer runs in the lower portion of the screen.</p>
+
+    <div class="screen-showcase reverse">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <img src="img/screen_sst_task.png" alt="Scrambled Sentence Task showing word list and time countdown" loading="lazy">
+        </div>
+      </div>
+
+      <div class="screen-caption">
+        <h3>Scrambled Sentence Task controls</h3>
+        <p>Words are shown as tappable items. Tap them one by one in the right order. Your assembled sentence appears below the word list in real time.</p>
+        <ul class="btn-list">
+          <li>
+            <span class="btn-chip">Word list</span>
+            <span class="btn-desc">Tap words in the order they should appear in the sentence. Each tapped word moves to the sentence preview below.</span>
+          </li>
+          <li>
+            <span class="btn-chip">Time left: XX sec</span>
+            <span class="btn-desc">A countdown timer shows how many seconds remain. The task is timed — work quickly but accurately.</span>
+          </li>
+          <li>
+            <span class="btn-chip">Unselect</span>
+            <span class="btn-desc">Clears your current word selection so you can start the sentence over.</span>
+          </li>
+          <li>
+            <span class="btn-chip">Last</span>
+            <span class="btn-desc">Goes back to the previous sentence if you need to review it.</span>
+          </li>
+          <li>
+            <span class="btn-chip">Submit</span>
+            <span class="btn-desc">Submits your completed sentence and moves to the next item. Only appears once a sentence is assembled.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════ PROFILE ═══ -->
+    <h2 id="profile">Profile &amp; Settings</h2>
+    <p>Tap the menu icon (☰) in the top-right of the app bar to access account settings, your study level, and sign-out options.</p>
+
+    <div class="screen-showcase">
+      <div class="phone-frame">
+        <div class="phone-screen" style="display:flex; flex-direction:column;">
+          <div class="mock-statusbar"><span>9:41</span><span>●●●●</span></div>
+          <div class="mock-appbar"><span>Profile</span></div>
+          <div style="padding:12px; background:#f4f6f8; flex:1;">
+            <!-- User info -->
+            <div style="background:#fff; border-radius:10px; padding:12px; margin-bottom:8px; text-align:center;">
+              <div style="width:40px;height:40px;border-radius:50%;background:#1a5276;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;margin:0 auto 6px;">P</div>
+              <div style="font-size:12px;font-weight:700;color:#1c1e21;">Participant</div>
+              <div style="font-size:9px;color:#888;">participant@study.edu</div>
+            </div>
+            <!-- Settings list -->
+            <div style="background:#fff; border-radius:10px; overflow:hidden; margin-bottom:8px;">
+              <div style="padding:9px 12px;border-bottom:1px solid #f0f0f0;font-size:9.5px;display:flex;align-items:center;gap:6px;"><span>👤</span> Account details</div>
+              <div style="padding:9px 12px;border-bottom:1px solid #f0f0f0;font-size:9.5px;display:flex;align-items:center;gap:6px;"><span>📊</span> Study group</div>
+              <div style="padding:9px 12px;border-bottom:1px solid #f0f0f0;font-size:9.5px;display:flex;align-items:center;gap:6px;"><span>🔔</span> Notifications</div>
+              <div style="padding:9px 12px;font-size:9.5px;display:flex;align-items:center;gap:6px;color:#c0392b;"><span>↩</span> Sign out</div>
+            </div>
+            <div style="text-align:center;font-size:8px;color:#aaa;">moment·e v13.04</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-caption">
+        <h3>Profile menu</h3>
+        <p>Access your account details and study configuration from the profile screen.</p>
+        <ul class="btn-list">
+          <li>
+            <span class="btn-chip">👤 Account details</span>
+            <span class="btn-desc">View your username, email, and account creation date.</span>
+          </li>
+          <li>
+            <span class="btn-chip">📊 Study group</span>
+            <span class="btn-desc">Shows your current study group and participant level. Contact your coordinator to change this.</span>
+          </li>
+          <li>
+            <span class="btn-chip">🔔 Notifications</span>
+            <span class="btn-desc">Check your EMA schedule and notification preferences. Ensure notifications are enabled in device settings.</span>
+          </li>
+          <li>
+            <span class="btn-chip" style="color:#c0392b;">↩ Sign out</span>
+            <span class="btn-desc">Signs you out of the app. Your locally cached data is preserved until the next sync.</span>
+          </li>
+        </ul>
+        <div class="admonition note" style="margin-top:16px;">
+          <div class="admonition-heading"><span>📋</span> Version number</div>
+          <div class="admonition-body">The app version is shown at the bottom of the profile screen as <code>v13.04</code>. Include this when reporting a bug.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="toc-wrapper">
+    <div class="toc-heading">On this page</div>
+    <ul class="toc-list">
+      <li><a href="#home">Home Screen</a></li>
+      <li><a href="#cognitive">Cognitive Tasks</a></li>
+      <li><a href="#questionnaire">Questionnaire</a></li>
+      <li><a href="#sst">Scrambled Sentences</a></li>
+      <li><a href="#profile">Profile &amp; Settings</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">moment<span class="dot">·</span>e</span>
+      <p>A clinical research platform for ecological momentary assessment, developed at SDSU CUTA Lab.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Docs</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="install.html">Install</a></li>
+        <li><a href="using.html">Using the App</a></li>
+        <li><a href="screens.html">App Screens</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="install.html#ios">iOS Guide</a></li>
+        <li><a href="install.html#android">Android Guide</a></li>
+        <li><a href="install.html#requirements">Requirements</a></li>
+        <li><a href="about.html#version">Version History</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="https://github.com/nader938/moment_e_issues">GitHub Issues</a></li>
+        <li><a href="https://github.com/nader938/moment_e_issues/issues/new">Report a Bug</a></li>
+        <li><a href="about.html#team">The Team</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CUTA Lab, San Diego State University</span>
+    <span>moment·e v13.04 · Built with ❤️ at SDSU</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const links = document.querySelectorAll('.toc-list a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector('.toc-list a[href="#' + e.target.id + '"]');
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-60px 0px -70% 0px' });
+  document.querySelectorAll('.docs-content h2[id]').forEach(h => obs.observe(h));
+})();
+</script>
+</body>
+</html>
