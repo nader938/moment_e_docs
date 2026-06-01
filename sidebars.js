@@ -10,6 +10,12 @@ const sidebars = {
       items: ['install', 'using'],
     },
     { type: 'doc', id: 'screens', label: 'App Screens' },
+    {
+      type: 'category',
+      label: 'Modules',
+      collapsed: false,
+      items: ['modules', 'distress-tolerance', 'mindfulness'],
+    },
     { type: 'doc', id: 'report', label: 'Report a Bug' },
   ],
 };

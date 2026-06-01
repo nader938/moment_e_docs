@@ -21,6 +21,7 @@ Developed by the **CUTA Lab at San Diego State University**.
 | 📲 **[Install the App](./install)** | Download on iOS or Android |
 | 📖 **[Using the App](./using)** | Signing in, completing tasks, notifications |
 | 📱 **[App Screens](./screens)** | Visual guide to every button and screen |
+| 📚 **[Modules](./modules)** | Distress Tolerance, Mindfulness, and more |
 | 🐛 **[Report a Bug](./report)** | Submit an issue on GitHub |
 
 ---
