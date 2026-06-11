@@ -23,5 +23,14 @@ jobs:
       - name: Lint markdown
         run: npm run lint:md
 
+      - name: Unit and config tests
+        run: npm test
+
       - name: Build (fails on broken links)
         run: npm run build
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end tests
+        run: npm run test:e2e
