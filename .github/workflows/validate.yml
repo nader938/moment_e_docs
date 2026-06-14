@@ -6,8 +6,8 @@ on:
   pull_request:
 
 jobs:
-  check-links:
-    name: Build & Check Links
+  validate:
+    name: Validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
