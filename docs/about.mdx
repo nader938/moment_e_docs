@@ -1,0 +1,54 @@
+---
+id: about
+title: About
+---
+
+import DocCardGrid from '@site/src/components/DocCardGrid';
+
+# About moment·e
+
+A clinical research platform for ecological momentary assessment, developed at SDSU.
+
+moment·e is a mobile research application for iOS and Android built to support EMA studies. It captures real-time data on mental health, behavior, and physiology — wherever participants are in their daily lives. The app replaces a legacy Delphi-based platform, rebuilt from the ground up in Flutter.
+
+:::info For study participants
+Your study coordinator will provide login credentials and explain what data is collected.
+:::
+
+---
+
+## Research Context
+
+moment·e was developed by the **CUTA Lab at San Diego State University** to support longitudinal mental health research focused on:
+
+<DocCardGrid cards={[
+  { emoji: '🔁', title: 'OCD',           description: 'Obsessive-Compulsive Disorder' },
+  { emoji: '😰', title: 'GAD',           description: 'Generalized Anxiety Disorder'  },
+  { emoji: '🫂', title: 'Social Phobia', description: 'Social Phobia (SP)'            },
+  { emoji: '📈', title: 'Longitudinal',  description: 'Behavioral & physiological patterns over time' },
+]} />
+
+---
+
+## The Team
+
+<DocCardGrid large cards={[
+  { emoji: '🏫', title: 'CUTA Lab · SDSU',  description: 'Developed and maintained by the Computational Understanding & Technological Accessibility Lab at San Diego State University.' },
+  { emoji: '🛠️', title: 'Tech Stack',        description: 'Flutter / Dart · AWS S3 · Firebase Auth · Firebase Crashlytics · iOS 13+ · Android 8.0+' },
+]} />
+
+[Submit an issue](https://github.com/nader938/moment_e_issues/issues/new) to reach the team.
+
+---
+
+## Version History {#version-history}
+
+### v13.04 — Current (May 2026)
+
+<DocCardGrid cards={[
+  { emoji: '📊', title: 'CEQI Table',          description: 'Per-question aggregate table added' },
+  { emoji: '🔓', title: 'Legacy Decryption',   description: 'Support for legacy .dat file decryption' },
+  { emoji: '🤖', title: 'Android Sign-In Fix', description: 'Google Sign-In fixed on Android' },
+  { emoji: '🎨', title: 'Icon Updates',         description: 'Refreshed app icons' },
+  { emoji: '▶️', title: 'Play Store',           description: 'Released on Google Play Store' },
+]} />

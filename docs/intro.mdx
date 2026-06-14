@@ -1,0 +1,62 @@
+---
+id: intro
+title: moment·e
+---
+
+import DocCardGrid from '@site/src/components/DocCardGrid';
+
+# moment·e
+
+**Research-grade EMA, built for the real world.**
+
+moment·e is a mobile research application for iOS and Android that captures real-time data on mental health, behavior, and physiology — wherever participants are in their daily lives. Developed by the **CUTA Lab at San Diego State University**.
+
+---
+
+## Quick Links
+
+<DocCardGrid cards={[
+  { emoji: '📲', title: 'Install the App',    description: 'Download on iOS or Android',            to: './install'  },
+  { emoji: '📖', title: 'Using the App',      description: 'Sign in, tasks, and notifications',      to: './using'    },
+  { emoji: '📱', title: 'App Screens',        description: 'Visual guide to every screen',           to: './screens'  },
+  { emoji: '📚', title: 'Modules',            description: 'Distress Tolerance, Mindfulness & more', to: './modules'  },
+  { emoji: '🎬', title: 'Video Guides',       description: 'Short walkthroughs with voiceover',      to: './videos'   },
+  { emoji: '🐛', title: 'Report a Bug',       description: 'Submit an issue on GitHub',              to: './report'   },
+]} />
+
+---
+
+## Features
+
+<DocCardGrid cards={[
+  {
+    emoji: '📱',
+    title: 'iOS & Android',
+    description: 'Native apps on both platforms — iPhone, iPad, and Android. One unified Flutter codebase.',
+  },
+  {
+    emoji: '🔒',
+    title: 'Encrypted & Secure',
+    description: 'All responses and sensor readings are AES-256 encrypted before upload to AWS S3.',
+  },
+  {
+    emoji: '🧠',
+    title: 'Cognitive Tasks',
+    description: 'Validated assessments built in: Flanker, Heartbeat Counting, Scrambled Sentences, and more.',
+  },
+  {
+    emoji: '⌚',
+    title: 'Apple Watch',
+    description: 'Continuous heart-rate and HRV monitoring streamed in real time via HealthKit.',
+  },
+  {
+    emoji: '📊',
+    title: 'Real-Time Sensor Data',
+    description: 'Live BPM, RR intervals, and HRV SDNN displayed on the Sensor Data screen.',
+  },
+  {
+    emoji: '⏰',
+    title: 'EMA Scheduling',
+    description: 'Configurable daily prompt windows push notifications at the right moments.',
+  },
+]} />
