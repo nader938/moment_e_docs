@@ -10,6 +10,7 @@ const sidebars = {
       items: ['install', 'using'],
     },
     { type: 'doc', id: 'screens', label: 'App Screens' },
+    { type: 'doc', id: 'videos', label: 'Video Guides' },
     {
       type: 'category',
       label: 'Modules',
