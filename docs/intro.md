@@ -29,18 +29,23 @@ Developed by the **CUTA Lab at San Diego State University**.
 ## Features
 
 ### 📱 iOS & Android
+
 Native apps on both platforms — iPhone, iPad, and Android devices. One unified Flutter codebase.
 
 ### 🔒 Encrypted & Secure
+
 All responses, sensor readings, and task results are AES-256 encrypted before upload to AWS S3.
 
 ### 🧠 Cognitive Tasks
+
 Validated assessments built in: Flanker, Heartbeat Counting, Scrambled Sentences, Word-Sentence Association.
 
 ### ⌚ Apple Watch Required for Sensor Monitoring
+
 Continuous physiological monitoring requires a paired **Apple Watch** (Series 4 or later, watchOS with iOS 13+). The watch streams heart-rate data to the app in real time via HealthKit. Without a paired Apple Watch, all other app features (surveys, cognitive tasks, questionnaires) still work normally.
 
 ### 📊 Real-Time Sensor Data
+
 The **Sensor Data** screen displays live and historical readings pulled from the Apple Watch:
 
 | Metric | Description |
@@ -52,7 +57,9 @@ The **Sensor Data** screen displays live and historical readings pulled from the
 The **Home screen** shows a live BPM reading in the welcome card whenever the Apple Watch is actively syncing. If no reading appears, check that the watch is worn snugly and that Health permissions are granted in iOS Settings → Privacy → Health → moment·e.
 
 ### ⏰ EMA Scheduling
+
 Configurable daily prompt windows push notifications at the right moments throughout the day.
 
 ### 🏥 Clinical Research
+
 Designed for OCD, GAD, Social Phobia, and related longitudinal mental health studies at SDSU.
