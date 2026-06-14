@@ -78,8 +78,8 @@ const config = {
           {
             title: 'Platform',
             items: [
-              { label: 'iOS Guide', to: '/install#ios-installation' },
-              { label: 'Android Guide', to: '/install#android-installation' },
+              { label: 'iOS Guide', to: '/install' },
+              { label: 'Android Guide', to: '/install' },
               { label: 'Requirements', to: '/install#requirements' },
               { label: 'Version History', to: '/about#version-history' },
             ],
