@@ -1,7 +1,6 @@
 ---
 id: intro
 title: moment·e
-slug: /
 ---
 
 # moment·e
