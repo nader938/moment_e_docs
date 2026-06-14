@@ -13,9 +13,9 @@ test('homepage loads with title and hero heading', async ({ page }) => {
 });
 
 test('sidebar links navigate to every main section', async ({ page }) => {
-  await page.goto('./');
+  await page.goto('./intro');
   const sidebar = page.locator('nav.menu');
-  await expect(sidebar.getByRole('link', { name: 'Home' })).toBeVisible();
+  await expect(sidebar.getByRole('link', { name: 'Introduction' })).toBeVisible();
 
   await sidebar.getByRole('link', { name: 'App Screens' }).click();
   await expect(
