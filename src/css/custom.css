@@ -1,6 +1,13 @@
 /* moment·e — Docusaurus custom theme */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ifm-heading-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ifm-heading-font-weight: 800;
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.65;
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -23,58 +30,53 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Navbar version badge */
-.navbar__title::after {
-  content: 'v13.04';
-  font-size: 11px;
-  font-weight: 600;
-  background: var(--ifm-color-primary);
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 20px;
-  margin-left: 8px;
-  vertical-align: middle;
+/* Navbar title */
+.navbar__title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 22px !important;
+  letter-spacing: -0.03em !important;
+  color: #000 !important;
 }
+
+/* Global heading style */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
 
 /* Phone frame for screenshots */
 .phone-wrap {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   align-items: flex-start;
-  margin: 28px 0;
+  justify-content: center;
+  margin: 32px 0;
   flex-wrap: wrap;
 }
 .phone-wrap.reverse { flex-direction: row-reverse; }
 
 .phone-frame {
-  width: 240px;
-  min-width: 240px;
-  background: #111;
-  border-radius: 40px;
-  padding: 10px;
-  box-shadow: 0 0 0 2px #333, 0 16px 48px rgba(0,0,0,.3);
+  width: 200px;
+  min-width: 200px;
+  background: #1a1a1a;
+  border-radius: 44px;
+  padding: 4px;
+  box-shadow: 0 0 0 1px #444, 0 20px 50px rgba(0,0,0,.25);
   position: relative;
   flex-shrink: 0;
 }
 .phone-frame::before {
-  content: '';
-  position: absolute;
-  top: 18px; left: 50%;
-  transform: translateX(-50%);
-  width: 80px; height: 22px;
-  background: #111;
-  border-radius: 0 0 14px 14px;
-  z-index: 2;
+  display: none;
 }
 .phone-screen {
-  border-radius: 32px;
+  border-radius: 40px;
   overflow: hidden;
-  aspect-ratio: 9/19.5;
 }
 .phone-screen img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -93,7 +95,773 @@
   font-family: var(--ifm-font-family-monospace);
 }
 
-/* Screen caption next to phone */
+/* ── Modules pages ─────────────────────────────── */
+
+.mod-page {
+  padding: 0.5rem 0 4rem;
+}
+
+/* Full-page ombre — covers the doc container, sidebar gap, and body */
+html:has(.mod-page) {
+  background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) fixed !important;
+  min-height: 100vh;
+}
+
+/* Section 1 — blue */
+html:has(.mod-page-1) {
+  background: linear-gradient(180deg, #f5fbff 0%, #85c4e8 100%) fixed !important;
+}
+
+/* Section 2 — teal */
+html:has(.mod-page-2) {
+  background: linear-gradient(180deg, #f5fbff 0%, #7dcce0 100%) fixed !important;
+}
+
+/* Section 3 — soft teal-green */
+html:has(.mod-page-3) {
+  background: linear-gradient(180deg, #f5fdf9 0%, #7dd4b8 100%) fixed !important;
+}
+
+/* Section 4 — soft teal-green */
+html:has(.mod-page-4) {
+  background: linear-gradient(180deg, #f5fdf5 0%, #7dd47f 100%) fixed !important;
+}
+
+/* Section 5 — soft green */
+html:has(.mod-page-5) {
+  background: linear-gradient(180deg, #f5fdf5 0%, #7dd47f 100%) fixed !important;
+}
+
+html:has(.mod-page) body,
+html:has(.mod-page) #__docusaurus,
+html:has(.mod-page) .main-wrapper,
+html:has(.mod-page) article,
+html:has(.mod-page) .theme-doc-markdown,
+html:has(.mod-page) div[class*="docPage"],
+html:has(.mod-page) div[class*="docMainContainer"],
+html:has(.mod-page) div[class*="docItemCol"],
+html:has(.mod-page) div[class*="docItemContainer"],
+html:has(.mod-page) .container,
+html:has(.mod-page) .row,
+html:has(.mod-page) .col,
+html:has(.mod-page) footer.footer {
+  background: transparent !important;
+}
+
+/* Remove dividing lines */
+html:has(.mod-page) div[class*="docPage"],
+html:has(.mod-page) div[class*="docMainContainer"],
+html:has(.mod-page) div[class*="docItemContainer"],
+html:has(.mod-page) .main-wrapper {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix pagination */
+html:has(.mod-page) nav.pagination-nav {
+  background: transparent !important;
+  padding-bottom: 3rem !important;
+}
+
+html:has(.mod-page) nav.pagination-nav a.pagination-nav__link {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+/* Full width content on module pages */
+html:has(.mod-page) .container,
+html:has(.mod-page) .col,
+html:has(.mod-page) div[class*="docItemCol"],
+html:has(.mod-page) div[class*="docMainContainer"],
+html:has(.mod-page) div[class*="docPage"] {
+  max-width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+html:has(.mod-page) [class*="tocCollapsible"],
+html:has(.mod-page) [class*="tableOfContents"],
+html:has(.mod-page) nav[class*="toc"] {
+  display: none !important;
+}
+
+.mod-eyebrow {
+  font-size: 15px;
+  color: #0d2d4a;
+  font-weight: 500;
+  margin-bottom: 0.4rem !important;
+}
+
+.mod-title {
+  font-size: 48px !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 1.25rem !important;
+  text-align: center !important;
+}
+
+.mod-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  color: #1a5f8e;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 1.75rem;
+  background: #fff;
+  border: 2px solid #d6e8f8;
+  border-radius: 12px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.mod-back:hover {
+  background: #eaf4fb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #0d2d4a;
+}
+
+.mod-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mod-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px 20px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.15s;
+}
+.mod-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
+
+.mod-badge {
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.mod-badge-1 { background: #edf4fb; color: #1a5f8e; }
+.mod-badge-2 { background: #eaf4f7; color: #1a6e82; }
+.mod-badge-3 { background: #e8f5f0; color: #1a7058; }
+.mod-badge-4 { background: #eaf5eb; color: #2a6b30; }
+.mod-badge-5 { background: #ebf5e9; color: #2a5c28; }
+
+.mod-card-label {
+  flex: 1;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0d2d4a;
+  line-height: 1.3;
+}
+
+.mod-chev {
+  color: #9ab8cc;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.mod-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mod-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.mod-item-num {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mod-item-name {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 500;
+  color: #0d2d4a;
+  line-height: 1.3;
+}
+
+/* ── Prev/Next pagination on module pages */
+html:has(.mod-page) nav.pagination-nav {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+html:has(.mod-page) a.pagination-nav__link {
+  background: #ffffff;
+  border: 2px solid #d6e8f8;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+html:has(.mod-page) a.pagination-nav__link:hover {
+  background: #eaf4fb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+html:has(.mod-page) a.pagination-nav__link .pagination-nav__label {
+  color: #1a5f8e;
+  font-weight: 600;
+  font-size: 17px;
+}
+html:has(.mod-page) a.pagination-nav__link .pagination-nav__sublabel {
+  color: #0d2d4a;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+/* ── Using page ────────────────────────────────── */
+
+.using-section-title {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0.5rem !important;
+  width: 100% !important;
+}
+
+.using-body {
+  font-size: 20px;
+  color: #0d2d4a;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ── Sidebar ───────────────────────────────────── */
+
+.menu__link, .menu__caret {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+/* ── Breadcrumbs ───────────────────────────────── */
+
+.breadcrumbs {
+  display: none !important;
+}
+
+/* ── Home page ─────────────────────────────────── */
+
+html:has(.home-page) {
+  background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) fixed !important;
+}
+
+html:has(.home-page) body,
+html:has(.home-page) #__docusaurus,
+html:has(.home-page) .main-wrapper,
+html:has(.home-page) article,
+html:has(.home-page) .theme-doc-markdown,
+html:has(.home-page) div[class*="docPage"],
+html:has(.home-page) div[class*="docMainContainer"],
+html:has(.home-page) div[class*="docItemCol"],
+html:has(.home-page) div[class*="docItemContainer"],
+html:has(.home-page) .container,
+html:has(.home-page) .row,
+html:has(.home-page) .col,
+html:has(.home-page) footer.footer {
+  background: transparent !important;
+}
+
+.home-hero {
+  text-align: center;
+  padding: 60px 20px 48px;
+}
+
+.home-hero-eyebrow {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0d2d4a;
+  margin-bottom: 16px;
+}
+
+.home-hero-title {
+  font-size: 72px !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  letter-spacing: -0.03em;
+  line-height: 1 !important;
+  margin-bottom: 16px !important;
+}
+
+.home-hero-sub {
+  font-size: 20px;
+  color: #0d2d4a;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+
+
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 20px 24px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.home-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.home-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-card-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d2d4a;
+  line-height: 1.2;
+}
+
+.home-card-sub {
+  font-size: 14px;
+  color: #0d2d4a;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+/* ── Home intro block ──────────────────────────── */
+
+.home-intro-block {
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-intro-text {
+  font-size: 18px;
+  color: #0d2d4a;
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+/* ── Home features ─────────────────────────────── */
+
+.home-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.home-feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.home-feature-item:last-child {
+  border-bottom: none;
+}
+
+.home-feature-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0d2d4a;
+  letter-spacing: -0.02em;
+}
+
+.home-feature-desc {
+  font-size: 15px;
+  color: #0d2d4a;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ── Report page ───────────────────────────────── */
+
+.report-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d2d4a;
+  color: #fff !important;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none !important;
+  border-radius: 14px;
+  padding: 14px 40px;
+  box-shadow: 0 4px 16px rgba(13,45,74,0.25);
+  transition: background 0.15s, box-shadow 0.15s;
+  margin: 0 auto 0.5rem;
+  display: block;
+  text-align: center;
+  width: fit-content;
+}
+.report-submit-btn:hover {
+  background: #1a5f8e;
+  box-shadow: 0 6px 20px rgba(13,45,74,0.35);
+}
+
+.install-help a {
+  color: #1a5f8e !important;
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  display: inline !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  width: auto !important;
+}
+
+/* ── About page ────────────────────────────────── */
+
+.about-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-bottom: 0.5rem;
+}
+
+.about-body {
+  font-size: 18px;
+  color: #0d2d4a;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-meta-grid {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-top: 1rem;
+}
+
+.about-meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.about-meta-row:last-child { border-bottom: none; }
+
+.about-meta-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a6e82;
+  min-width: 90px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-meta-value {
+  font-size: 16px;
+  color: #0d2d4a;
+  font-weight: 500;
+}
+
+.about-version-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-top: 1rem;
+}
+
+.about-version-tag {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d2d4a;
+}
+
+.about-version-date {
+  font-size: 13px;
+  color: #0d2d4a;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+/* ── Using page video ──────────────────────────── */
+
+.using-video-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0;
+}
+
+.using-iphone {
+  width: 260px;
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 4px;
+  box-shadow: 0 0 0 1px #444, 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.using-iphone-screen {
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+}
+
+.using-video {
+  width: 100%;
+  display: block;
+  margin-top: -11%;
+  margin-bottom: -2%;
+}
+
+
+/* ── Using page flow ───────────────────────────── */
+
+.using-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 28px 0;
+}
+
+.using-phone-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.using-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-top: 160px;
+}
+
+.using-callout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px solid #d6e8f8;
+  border-radius: 50px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #1a5f8e;
+  font-weight: 600;
+  max-width: 200px;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.using-callout svg {
+  flex-shrink: 0;
+}
+
+
+.using-steps-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.using-step-card {
+  flex: 1;
+  min-width: 160px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.using-step-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a5f8e;
+  margin-bottom: 6px;
+}
+
+.using-step-path {
+  font-size: 14px;
+  color: #0d2d4a;
+  line-height: 1.55;
+}
+
+/* ── Install page ──────────────────────────────── */
+
+.install-sub {
+  font-size: 22px;
+  color: #0d2d4a;
+  font-weight: 500;
+  margin-bottom: 1.75rem !important;
+  text-align: center;
+}
+
+.install-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.install-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.install-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.install-platform-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.install-platform-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0d2d4a;
+}
+
+.install-req-note {
+  font-size: 13px;
+  color: #0d2d4a;
+  font-weight: 500;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.install-help {
+  font-size: 22px;
+  font-weight: 500;
+  color: #0d2d4a;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.install-help a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none !important;
+  background: #1a5f8e;
+  border-radius: 50px;
+  padding: 14px 28px;
+  transition: background 0.15s;
+}
+.install-help a:hover {
+  background: #0d4a72;
+  color: #fff;
+}
+
+.install-dl-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px 20px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.15s;
+}
+.install-dl-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.install-dl-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.install-dl-label {
+  font-size: 13px;
+  color: #0d2d4a;
+  font-weight: 500;
+}
+
+.install-dl-store {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d2d4a;
+  line-height: 1.2;
+}
+
+/* ── Screen caption next to phone */
 .screen-cap {
   flex: 1;
   min-width: 200px;
@@ -105,4 +873,192 @@
 .screen-cap table td:first-child {
   white-space: nowrap;
   padding-right: 12px;
+}
+
+/* ── Mobile responsive ─────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Strip all container padding so content fills the screen */
+  .container,
+  .col,
+  div[class*="docItemCol"],
+  div[class*="docMainContainer"],
+  div[class*="docPage"],
+  div[class*="docItemContainer"],
+  article,
+  .theme-doc-markdown,
+  .row {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Global page padding */
+  .mod-page {
+    padding: 20px 16px 48px !important;
+  }
+
+  /* All page titles */
+  .mod-title {
+    font-size: 30px !important;
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Subtitles under titles */
+  .install-sub {
+    font-size: 15px !important;
+    text-align: center !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* Section headings */
+  .using-section-title {
+    font-size: 20px !important;
+  }
+
+  /* Body text on tutorial pages */
+  .using-body {
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+
+  /* Back button */
+  .mod-back {
+    font-size: 14px !important;
+    padding: 8px 14px !important;
+  }
+
+  /* ── Home page ── */
+  .home-hero {
+    padding: 16px 0 12px !important;
+  }
+
+  .home-hero-title {
+    font-size: 42px !important;
+    white-space: nowrap !important;
+  }
+
+  .home-hero-eyebrow {
+    font-size: 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 1rem !important;
+  }
+
+  .home-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 14px 16px !important;
+    gap: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .home-card-icon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .home-card-label {
+    font-size: 16px !important;
+  }
+
+  .home-card-sub {
+    font-size: 13px !important;
+  }
+
+  .home-feature-title {
+    font-size: 15px !important;
+  }
+
+  .home-feature-desc {
+    font-size: 13px !important;
+  }
+
+  /* ── Install page ── */
+  .install-platforms {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .install-dl-card {
+    width: 100% !important;
+    padding: 14px 16px !important;
+  }
+
+  .install-dl-store {
+    font-size: 20px !important;
+  }
+
+  .install-help {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+
+  /* ── Report page ── */
+  .report-submit-btn {
+    font-size: 16px !important;
+    padding: 12px 28px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* ── Modules list ── */
+  .mod-card {
+    padding: 14px 16px !important;
+    gap: 14px !important;
+  }
+
+  .mod-card-label {
+    font-size: 16px !important;
+  }
+
+  .mod-badge {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 18px !important;
+  }
+
+  /* ── About page ── */
+  .about-meta-label {
+    font-size: 11px !important;
+    min-width: 70px !important;
+  }
+
+  .about-meta-value {
+    font-size: 14px !important;
+  }
+
+  .about-meta-row {
+    padding: 12px 14px !important;
+    gap: 10px !important;
+  }
+
+  .about-body {
+    font-size: 15px !important;
+  }
+
+  /* ── Video phone frame ── */
+  .phone-frame {
+    width: 160px !important;
+    min-width: 160px !important;
+  }
+
+  /* ── Mod items (numbered lists) ── */
+  .mod-item {
+    padding: 12px 14px !important;
+    gap: 12px !important;
+  }
+
+  .mod-item-name {
+    font-size: 15px !important;
+  }
 }

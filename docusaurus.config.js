@@ -41,9 +41,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'moment·e',
+        title: 'moment_e',
         items: [
-          { type: 'docSidebar', sidebarId: 'docs', position: 'left', label: 'Docs' },
           {
             to: '/report',
             label: 'Report a Bug',
@@ -55,13 +54,6 @@ const config = {
             position: 'right',
           },
         ],
-      },
-      announcementBar: {
-        id: 'v13_04',
-        content: '🎉 moment·e v13.04 is live on iOS and Android — <a href="/moment_e_docs/about#version-history">See what\'s new</a>',
-        backgroundColor: '#1b1b1d',
-        textColor: '#ffffffcc',
-        isCloseable: true,
       },
       footer: {
         style: 'dark',

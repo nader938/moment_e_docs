@@ -1,46 +1,40 @@
 ---
 id: install
 title: Install
+hide_title: true
 ---
 
-# Install moment·e
+<div class="mod-page mod-page-1">
+<h1 class="mod-title">Install moment_e</h1>
+<p class="install-sub">Click the links below to download the moment_e app on Apple or Android</p>
 
-Available on iOS and Android. Choose your platform below.
+<div class="install-platforms">
 
-## iOS Installation {#ios-installation}
+<a class="install-dl-card" href="https://apps.apple.com/us/app/moment-e/id1529479809">
+  <div class="install-platform-icon mod-badge-1">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.54 3.99M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25" fill="#1a5f8e"/></svg>
+  </div>
+  <div class="install-dl-info">
+    <span class="install-dl-store">App Store</span>
+  </div>
+  <span class="mod-chev">›</span>
+</a>
 
-1. **Open the App Store** — On your iPhone or iPad, tap the App Store icon.
-2. **Search for moment·e** — Tap the Search tab and type **moment-e**, or ask your study coordinator for a direct download link.
-3. **Tap Get** — Confirm with Face ID, Touch ID, or your Apple ID password.
-4. **Open and sign in** — Sign in with the credentials provided by your study coordinator.
+<a class="install-dl-card" href="https://play.google.com/store/apps/details?id=com.cat.ema&utm_source=na_Med">
+  <div class="install-platform-icon mod-badge-3">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 18.5v-13A1.5 1.5 0 0 1 5.06 4.1l13 6.5a1.5 1.5 0 0 1 0 2.8l-13 6.5A1.5 1.5 0 0 1 3 18.5z" fill="#1a7058"/></svg>
+  </div>
+  <div class="install-dl-info">
+    <span class="install-dl-store">Google Play</span>
+  </div>
+  <span class="mod-chev">›</span>
+</a>
 
-:::info iOS requirement
-moment·e requires iOS 13.0 or later. Compatible with iPhone and iPad.
-:::
+</div>
 
-## Android Installation {#android-installation}
+<div class="install-help">
+  Having trouble downloading it?
+</div>
+<a class="report-submit-btn" href="https://github.com/nader938/moment_e_issues/issues/new" target="_blank">Submit an issue</a>
 
-1. **Open Google Play** — On your Android device, open the Google Play Store app.
-2. **Search for moment·e** — Search for **moment-e** or ask your study coordinator for a direct link.
-3. **Tap Install** — Wait for the download to complete.
-4. **Open and sign in** — Sign in with your study credentials.
-
-:::info Android requirement
-Requires Android 8.0 (Oreo) or later, API level 26+.
-:::
-
-## Requirements {#requirements}
-
-| Requirement | Details |
-|---|---|
-| **iOS** | iPhone or iPad running iOS 13.0 or later |
-| **Android** | Android 8.0 (API 26) or later |
-| **Internet** | Required for sign-in and data sync |
-| **Storage** | ~100 MB free space |
-| **Account** | Credentials provided by your study coordinator |
-
-## Troubleshooting
-
-:::warning Can't find the app?
-Contact your study coordinator for a direct install link, or [submit an issue](https://github.com/nader938/moment_e_issues/issues/new) and we'll help.
-:::
+</div>

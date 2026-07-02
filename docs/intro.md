@@ -1,58 +1,96 @@
 ---
 id: intro
-title: moment·e
+title: Home
+hide_title: true
 slug: /
 ---
 
-# moment·e
+<div class="mod-page home-page">
 
-**Research-grade EMA, built for the real world.**
+<div class="home-hero">
+  <div class="home-hero-eyebrow">CUTA Lab</div>
+  <h1 class="home-hero-title">moment_e</h1>
+  <p class="home-hero-sub">Your guide to using the moment_e app</p>
+</div>
 
-moment·e is a mobile research application for iOS and Android built to support ecological momentary assessment (EMA) studies. It captures real-time data on mental health, behavior, and physiology — wherever participants are in their daily lives.
+<div class="home-grid">
 
-Developed by the **CUTA Lab at San Diego State University**.
+<a class="home-card" href="/moment_e_docs/install">
+  <div class="home-card-icon mod-badge-1">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 16l-4-4M12 16l4-4" stroke="#1a5f8e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><path d="M4 20h16" stroke="#1a5f8e" strokeWidth="1.8" strokeLinecap="round"/></svg>
+  </div>
+  <span class="home-card-label">Get Started</span>
+  <span class="home-card-sub">Download the app</span>
+</a>
 
----
+<a class="home-card" href="/moment_e_docs/using">
+  <div class="home-card-icon mod-badge-2">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="#1a6e82" strokeWidth="1.8"/><path d="M9 7h6M9 11h6M9 15h4" stroke="#1a6e82" strokeWidth="1.8" strokeLinecap="round"/></svg>
+  </div>
+  <span class="home-card-label">App Tutorials</span>
+  <span class="home-card-sub">Watch tutorial videos</span>
+</a>
 
-## Quick links
+<a class="home-card" href="/moment_e_docs/modules">
+  <div class="home-card-icon mod-badge-3">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 10h16M4 14h10" stroke="#1a7058" strokeWidth="1.8" strokeLinecap="round"/><circle cx="17" cy="17" r="4" stroke="#1a7058" strokeWidth="1.8"/><path d="M17 15v2l1 1" stroke="#1a7058" strokeWidth="1.8" strokeLinecap="round"/></svg>
+  </div>
+  <span class="home-card-label">Modules</span>
+  <span class="home-card-sub">Educational content</span>
+</a>
 
-| | |
-|---|---|
-| 📲 **[Install the App](./install)** | Download on iOS or Android |
-| 📖 **[Using the App](./using)** | Signing in, completing tasks, notifications |
-| 📱 **[App Screens](./screens)** | Visual guide to every button and screen |
-| 📚 **[Modules](./modules)** | Distress Tolerance, Mindfulness, and more |
-| 🐛 **[Report a Bug](./report)** | Submit an issue on GitHub |
+<a class="home-card" href="/moment_e_docs/report">
+  <div class="home-card-icon mod-badge-5">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2a5c28" strokeWidth="1.8"/><path d="M12 8v4M12 16h.01" stroke="#2a5c28" strokeWidth="2" strokeLinecap="round"/></svg>
+  </div>
+  <span class="home-card-label">Report a Bug</span>
+  <span class="home-card-sub">Submit an issue</span>
+</a>
 
----
+</div>
 
-## Features
+<div style={{height:'80px'}}></div>
 
-### 📱 iOS & Android
-Native apps on both platforms — iPhone, iPad, and Android devices. One unified Flutter codebase.
+<h2 class="using-section-title">Features</h2>
 
-### 🔒 Encrypted & Secure
-All responses, sensor readings, and task results are AES-256 encrypted before upload to AWS S3.
+<div class="home-features" style={{marginTop:'1rem'}}>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Ecological Momentary Assessment</span>
+    <span class="home-feature-desc">Capture real-time data from participants in their everyday environment</span>
+  </div>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Push Notifications</span>
+    <span class="home-feature-desc">Prompt participants at scheduled or random intervals throughout the day</span>
+  </div>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Guided Modules</span>
+    <span class="home-feature-desc">Built-in educational content on anxiety and exposure therapy</span>
+  </div>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Cross-Platform</span>
+    <span class="home-feature-desc">Available on iOS and Android with a consistent experience</span>
+  </div>
+</div>
 
-### 🧠 Cognitive Tasks
-Validated assessments built in: Flanker, Heartbeat Counting, Scrambled Sentences, Word-Sentence Association.
+<h2 class="using-section-title" style={{marginTop:'3rem'}}>About</h2>
 
-### ⌚ Apple Watch Required for Sensor Monitoring
-Continuous physiological monitoring requires a paired **Apple Watch** (Series 4 or later, watchOS with iOS 13+). The watch streams heart-rate data to the app in real time via HealthKit. Without a paired Apple Watch, all other app features (surveys, cognitive tasks, questionnaires) still work normally.
+<div class="home-features" style={{marginTop:'1rem'}}>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Lab</span>
+    <span class="home-feature-desc">CUTA Lab, San Diego State University</span>
+  </div>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Platform</span>
+    <span class="home-feature-desc">iOS 13+ and Android 8.0+</span>
+  </div>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Built with</span>
+    <span class="home-feature-desc">Flutter / Dart</span>
+  </div>
+  <div class="home-feature-item">
+    <span class="home-feature-title">Backend</span>
+    <span class="home-feature-desc">AWS S3, Firebase Auth, Firebase Crashlytics</span>
+  </div>
+</div>
 
-### 📊 Real-Time Sensor Data
-The **Sensor Data** screen displays live and historical readings pulled from the Apple Watch:
-
-| Metric | Description |
-|---|---|
-| ❤️ **Heart Rate (BPM)** | Beat-by-beat heart rate, updated continuously while the watch is worn |
-| 📉 **RR Intervals** | Time between consecutive heartbeats (ms) — the raw signal used for HRV analysis |
-| 📊 **HRV — SDNN** | Standard deviation of RR intervals over the past 7 days, a measure of autonomic nervous system activity |
-
-The **Home screen** shows a live BPM reading in the welcome card whenever the Apple Watch is actively syncing. If no reading appears, check that the watch is worn snugly and that Health permissions are granted in iOS Settings → Privacy → Health → moment·e.
-
-### ⏰ EMA Scheduling
-Configurable daily prompt windows push notifications at the right moments throughout the day.
-
-### 🏥 Clinical Research
-Designed for OCD, GAD, Social Phobia, and related longitudinal mental health studies at SDSU.
+</div>
