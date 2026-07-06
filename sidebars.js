@@ -54,6 +54,7 @@ const sidebars = {
             { type: 'doc', id: 'memory-enhancement', label: 'Memory enhancement' },
             { type: 'doc', id: 'finding-community', label: 'Finding your community' },
             { type: 'doc', id: 'value-of-mistakes', label: 'Value of mistakes' },
+            { type: 'doc', id: 'living-with-uncertainty', label: 'Living with uncertainty' },
           ],
         },
       ],

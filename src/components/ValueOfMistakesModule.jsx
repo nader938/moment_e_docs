@@ -38,6 +38,7 @@ const pages = [
     title: 'Great work!',
     links: [
       { label: '‹ Problem Solving', href: '/moment_e_docs/problem-solving' },
+      { label: 'Living with Uncertainty ›', href: '/moment_e_docs/living-with-uncertainty' },
     ],
   },
 ];
