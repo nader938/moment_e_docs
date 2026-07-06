@@ -104,6 +104,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Full-page ombre — covers the doc container, sidebar gap, and body */
 html:has(.mod-page) {
   background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-attachment: scroll !important;
   min-height: 100vh;
 }
 
@@ -337,6 +340,9 @@ html:has(.pm-app) [class*="tableOfContents"] {
    which stays white and expands to fill the space next to the sidebar. */
 html:has(.pm-app) {
   background: linear-gradient(180deg, #f5fbff 0%, #85c4e8 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-attachment: scroll !important;
   min-height: 100vh;
 }
 aside .menu__link--active,
@@ -383,6 +389,9 @@ html:has(.pm-app) article {
 .pm-app {
   font-family: 'DM Sans', Arial, sans-serif;
   width: 100%;
+  min-height: calc(100vh - var(--ifm-navbar-height, 60px));
+  display: flex;
+  flex-direction: column;
 }
 
 .pm-topbar {
@@ -401,6 +410,9 @@ html:has(.pm-app) article {
   padding: 24px 2.5rem 32px;
   width: 100%;
   box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .pm-scroll-area--bleed {
   max-width: none;
@@ -417,17 +429,17 @@ html:has(.pm-app) article {
 .pm-excerpt-note a { color: #1B3F6E; text-decoration: underline; text-underline-offset: 2px; }
 
 .pm-transition-wrap {
-  min-height: 70vh;
+  flex: 1;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: 60px 40px;
   box-sizing: border-box;
 }
 .pm-transition-text {
-  font-size: 2rem; font-weight: 800; color: #0d2b4a; line-height: 1.28; max-width: 480px;
+  font-size: 2.75rem; font-weight: 800; color: #0d2b4a; line-height: 1.22; max-width: 600px;
 }
 
 .pm-titlecard-subtitle {
-  font-size: 1.1rem; font-weight: 600; color: #4d6178; margin-top: 0.75rem;
+  font-size: 1.3rem; font-weight: 600; color: #4d6178; margin-top: 1rem;
 }
 .pm-titlecard-start {
   flex: none !important;
@@ -652,6 +664,14 @@ html:has(.mod-page) a.pagination-nav__link .pagination-nav__sublabel {
   font-weight: 600 !important;
 }
 
+.menu__caret {
+  margin-right: 12px !important;
+}
+
+aside {
+  border-right: none !important;
+}
+
 /* ── Breadcrumbs ───────────────────────────────── */
 
 .breadcrumbs {
@@ -662,6 +682,9 @@ html:has(.mod-page) a.pagination-nav__link .pagination-nav__sublabel {
 
 html:has(.home-page) {
   background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-attachment: scroll !important;
 }
 
 html:has(.home-page) body,

@@ -188,7 +188,7 @@ export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back 
 
       case 'title-card':
         return (
-          <div className="pm-transition-wrap" style={{ background: TRANSITION_GRADIENTS[page.tint || 'blue'] }}>
+          <div className="pm-transition-wrap" style={{ background: '#ffffff' }}>
             <h1 className="pm-transition-text">{page.title}</h1>
             {page.subtitle && <p className="pm-titlecard-subtitle">{page.subtitle}</p>}
             <button className="pm-btn-next pm-titlecard-start" onClick={goNext}>Start</button>
