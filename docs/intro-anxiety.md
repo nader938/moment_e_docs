@@ -11,7 +11,7 @@ hide_title: true
 <div class="mod-item-list">
   <div class="mod-item"><div class="mod-item-num mod-badge-1">1</div><span class="mod-item-name">Generalized Anxiety Disorder</span><span class="mod-chev">›</span></div>
   <div class="mod-item"><div class="mod-item-num mod-badge-1">2</div><span class="mod-item-name">Panic Disorder</span><span class="mod-chev">›</span></div>
-  <div class="mod-item"><div class="mod-item-num mod-badge-1">3</div><span class="mod-item-name">Social Anxiety</span><span class="mod-chev">›</span></div>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/social-anxiety"><div class="mod-item-num mod-badge-1">3</div><span class="mod-item-name">Social Anxiety</span><span class="mod-chev">›</span></a>
   <div class="mod-item"><div class="mod-item-num mod-badge-1">4</div><span class="mod-item-name">OCD</span><span class="mod-chev">›</span></div>
 </div>
 </div>
