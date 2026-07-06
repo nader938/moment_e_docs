@@ -12,6 +12,6 @@ hide_title: true
   <div class="mod-item"><div class="mod-item-num mod-badge-4">1</div><span class="mod-item-name">What is a high quality exposure</span><span class="mod-chev">›</span></div>
   <div class="mod-item"><div class="mod-item-num mod-badge-4">2</div><span class="mod-item-name">How to do an exposure for social anxiety</span><span class="mod-chev">›</span></div>
   <div class="mod-item"><div class="mod-item-num mod-badge-4">3</div><span class="mod-item-name">How to do an exposure for panic</span><span class="mod-chev">›</span></div>
-  <div class="mod-item"><div class="mod-item-num mod-badge-4">4</div><span class="mod-item-name">How to do an exposure — OCD subtypes</span><span class="mod-chev">›</span></div>
+  <div class="mod-item"><div class="mod-item-num mod-badge-4">4</div><span class="mod-item-name">How to do an exposure for OCD subtypes</span><span class="mod-chev">›</span></div>
 </div>
 </div>

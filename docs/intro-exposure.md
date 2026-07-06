@@ -9,9 +9,8 @@ hide_title: true
 <h1 class="mod-title">Exposure therapy basics</h1>
 
 <div class="mod-item-list">
-  <div class="mod-item"><div class="mod-item-num mod-badge-2">1</div><span class="mod-item-name">How to do Exposures / ERP</span><span class="mod-chev">›</span></div>
-  <div class="mod-item"><div class="mod-item-num mod-badge-2">2</div><span class="mod-item-name">Exposure for social anxiety</span><span class="mod-chev">›</span></div>
-  <div class="mod-item"><div class="mod-item-num mod-badge-2">3</div><span class="mod-item-name">Exposure for panic</span><span class="mod-chev">›</span></div>
-  <div class="mod-item"><div class="mod-item-num mod-badge-2">4</div><span class="mod-item-name">Exposure — OCD subtypes</span><span class="mod-chev">›</span></div>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/exposure-therapy"><div class="mod-item-num mod-badge-2">1</div><span class="mod-item-name">What is exposure therapy</span><span class="mod-chev">›</span></a>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/creating-hierarchy"><div class="mod-item-num mod-badge-2">2</div><span class="mod-item-name">What is an exposure hierarchy</span><span class="mod-chev">›</span></a>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/high-quality-exposure"><div class="mod-item-num mod-badge-2">3</div><span class="mod-item-name">How do we do exposures</span><span class="mod-chev">›</span></a>
 </div>
 </div>

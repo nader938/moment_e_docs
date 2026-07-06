@@ -9,7 +9,7 @@ hide_title: true
 <h1 class="mod-title">Problem solving</h1>
 
 <div class="mod-item-list">
-  <div class="mod-item"><div class="mod-item-num mod-badge-5">1</div><span class="mod-item-name">Avoidance</span><span class="mod-chev">›</span></div>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/avoidance"><div class="mod-item-num mod-badge-5">1</div><span class="mod-item-name">Avoidance</span><span class="mod-chev">›</span></a>
   <div class="mod-item"><div class="mod-item-num mod-badge-5">2</div><span class="mod-item-name">Habit formation</span><span class="mod-chev">›</span></div>
   <div class="mod-item"><div class="mod-item-num mod-badge-5">3</div><span class="mod-item-name">Memory enhancement</span><span class="mod-chev">›</span></div>
   <div class="mod-item"><div class="mod-item-num mod-badge-5">4</div><span class="mod-item-name">Seeking more care</span><span class="mod-chev">›</span></div>

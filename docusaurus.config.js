@@ -20,6 +20,13 @@ const config = {
 
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap',
+      type: 'text/css',
+    },
+  ],
+
   presets: [
     [
       'classic',

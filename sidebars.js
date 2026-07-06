@@ -21,11 +21,38 @@ const sidebars = {
       link: { type: 'doc', id: 'modules' },
       collapsed: true,
       items: [
-        { type: 'doc', id: 'intro-anxiety', label: 'Introduction to anxiety' },
-        { type: 'doc', id: 'intro-exposure', label: 'Exposure therapy basics' },
-        { type: 'doc', id: 'creating-hierarchy', label: 'Creating a hierarchy' },
-        { type: 'doc', id: 'high-quality-exposure', label: 'High quality exposures' },
-        { type: 'doc', id: 'problem-solving', label: 'Problem solving' },
+        {
+          type: 'category',
+          label: 'Introduction to anxiety',
+          link: { type: 'doc', id: 'intro-anxiety' },
+          collapsed: true,
+          items: [
+            { type: 'doc', id: 'gad', label: 'Generalized Anxiety Disorder' },
+            { type: 'doc', id: 'panic-disorder', label: 'Panic Disorder' },
+            { type: 'doc', id: 'social-anxiety', label: 'Social Anxiety' },
+            { type: 'doc', id: 'ocd', label: 'OCD' },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Exposure therapy basics',
+          link: { type: 'doc', id: 'intro-exposure' },
+          collapsed: true,
+          items: [
+            { type: 'doc', id: 'exposure-therapy', label: 'What is exposure therapy' },
+            { type: 'doc', id: 'creating-hierarchy', label: 'What is an exposure hierarchy' },
+            { type: 'doc', id: 'high-quality-exposure', label: 'How do we do exposures' },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Problem solving',
+          link: { type: 'doc', id: 'problem-solving' },
+          collapsed: true,
+          items: [
+            { type: 'doc', id: 'avoidance', label: 'Avoidance' },
+          ],
+        },
       ],
     },
     { type: 'doc', id: 'report', label: 'Report a Bug' },

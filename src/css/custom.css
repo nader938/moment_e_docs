@@ -103,33 +103,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Full-page ombre — covers the doc container, sidebar gap, and body */
 html:has(.mod-page) {
-  background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) fixed !important;
+  background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) !important;
   min-height: 100vh;
 }
 
 /* Section 1 — blue */
 html:has(.mod-page-1) {
-  background: linear-gradient(180deg, #f5fbff 0%, #85c4e8 100%) fixed !important;
+  background: linear-gradient(180deg, #f5fbff 0%, #85c4e8 100%) !important;
 }
 
 /* Section 2 — teal */
 html:has(.mod-page-2) {
-  background: linear-gradient(180deg, #f5fbff 0%, #7dcce0 100%) fixed !important;
+  background: linear-gradient(180deg, #f5fbff 0%, #7dcce0 100%) !important;
 }
 
 /* Section 3 — soft teal-green */
 html:has(.mod-page-3) {
-  background: linear-gradient(180deg, #f5fdf9 0%, #7dd4b8 100%) fixed !important;
+  background: linear-gradient(180deg, #f5fdf9 0%, #7dd4b8 100%) !important;
 }
 
 /* Section 4 — soft teal-green */
 html:has(.mod-page-4) {
-  background: linear-gradient(180deg, #f5fdf5 0%, #7dd47f 100%) fixed !important;
+  background: linear-gradient(180deg, #f5fdf5 0%, #7dd47f 100%) !important;
 }
 
 /* Section 5 — soft green */
 html:has(.mod-page-5) {
-  background: linear-gradient(180deg, #f5fdf5 0%, #7dd47f 100%) fixed !important;
+  background: linear-gradient(180deg, #f5fdf5 0%, #7dd47f 100%) !important;
 }
 
 html:has(.mod-page) body,
@@ -323,246 +323,280 @@ html:has(.mod-page) nav[class*="toc"] {
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
-/* ── Interactive module flow (e.g. Social Anxiety) ─── */
+/* ── Phone-app style interactive modules (ModuleFlow) ── */
 
-.mod-flow {
-  max-width: 640px;
-  margin: 0 auto;
+html:has(.pm-app) nav.theme-doc-breadcrumbs,
+html:has(.pm-app) nav.pagination-nav,
+html:has(.pm-app) footer.footer,
+html:has(.pm-app) [class*="tocCollapsible"],
+html:has(.pm-app) [class*="tableOfContents"] {
+  display: none !important;
 }
 
-.mod-flow-progress-track {
+/* Blue ombre bleeds through everywhere except the main content panel,
+   which stays white and expands to fill the space next to the sidebar. */
+html:has(.pm-app) {
+  background: linear-gradient(180deg, #f5fbff 0%, #85c4e8 100%) !important;
+  min-height: 100vh;
+}
+aside .menu__link--active,
+aside .menu__link:hover {
+  border-radius: 0 !important;
+}
+html:has(.pm-app) body,
+html:has(.pm-app) #__docusaurus,
+html:has(.pm-app) .main-wrapper {
+  background: transparent !important;
+}
+html:has(.pm-app) article,
+html:has(.pm-app) .theme-doc-markdown,
+html:has(.pm-app) div[class*="docPage"],
+html:has(.pm-app) [class*="docMainContainer"],
+html:has(.pm-app) div[class*="docItemCol"],
+html:has(.pm-app) div[class*="docItemContainer"],
+html:has(.pm-app) [class*="docMainContainer"] .container,
+html:has(.pm-app) [class*="docMainContainer"] .row,
+html:has(.pm-app) [class*="docMainContainer"] .col {
+  background: #fff !important;
+}
+html:has(.pm-app) [class*="docMainContainer"] .container,
+html:has(.pm-app) [class*="docMainContainer"] .col,
+html:has(.pm-app) div[class*="docItemCol"],
+html:has(.pm-app) div[class*="docPage"] {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+html:has(.pm-app) [class*="docMainContainer"],
+html:has(.pm-app) [class*="docMainContainer"] .container,
+html:has(.pm-app) [class*="docMainContainer"] .row,
+html:has(.pm-app) [class*="docMainContainer"] .col,
+html:has(.pm-app) div[class*="docItemCol"],
+html:has(.pm-app) div[class*="docItemContainer"],
+html:has(.pm-app) article {
+  min-height: calc(100vh - var(--ifm-navbar-height, 60px));
+}
+
+.pm-app {
+  font-family: 'DM Sans', Arial, sans-serif;
   width: 100%;
-  height: 6px;
-  border-radius: 3px;
-  background: rgba(255,255,255,0.6);
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-.mod-flow-progress-fill {
-  height: 100%;
-  background: #1a5f8e;
-  transition: width 0.2s ease;
 }
 
-.mod-flow-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 32px 28px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  min-height: 240px;
-}
-
-.mod-flow-heading {
-  font-size: 26px;
-  font-weight: 700;
-  color: #0d2d4a;
-  margin-bottom: 0.75rem;
-}
-
-.mod-flow-body {
-  font-size: 17px;
-  color: #33475b;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.mod-flow-footer-text {
-  font-size: 15px;
-  color: #6b7f92;
-  margin-top: 1.25rem;
-}
-
-.mod-flow-transition-text {
-  font-size: 30px;
-  font-weight: 700;
-  color: #0d2d4a;
-  text-align: center;
-  line-height: 1.35;
-  padding: 2.5rem 0.5rem;
-}
-
-.mod-flow-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 1rem 0;
-}
-
-.mod-flow-list-item {
+.pm-topbar {
+  padding: 8px 2.5rem 14px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: 14px;
-  background: #f5fbff;
-  border-radius: 14px;
-  padding: 14px 16px;
+  justify-content: flex-end;
+}
+.pm-progress-wrap { display: flex; align-items: center; gap: 8px; }
+.pm-progress-bar { width: 80px; height: 5px; background: #E2EEF8; border-radius: 3px; overflow: hidden; }
+.pm-progress-fill { height: 100%; background: #0EA5A5; border-radius: 3px; transition: width 0.2s ease; }
+.pm-progress-label { font-size: 0.72rem; color: #6B9EC4; font-weight: 500; min-width: 34px; }
+
+.pm-scroll-area {
+  padding: 24px 2.5rem 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pm-scroll-area--bleed {
+  max-width: none;
+  padding: 0;
 }
 
-.mod-flow-list-label {
-  font-size: 16px;
-  font-weight: 600;
-  color: #0d2d4a;
+.pm-h1 { font-size: 34px; font-weight: 800; color: #000; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1rem; }
+.pm-subheading { font-size: 1.15rem; font-weight: 800; color: #0d2b4a; margin: 0.5rem 0 0.85rem; }
+.pm-p { font-size: 0.93rem; color: #3A5068; line-height: 1.7; margin-bottom: 12px; }
+.pm-hint { font-size: 0.88rem; color: #3A5068; font-style: italic; margin-bottom: 10px; }
+.pm-excerpt-note {
+  font-size: 0.85rem; font-style: italic; color: #6B9EC4; margin-bottom: 1rem;
+}
+.pm-excerpt-note a { color: #1B3F6E; text-decoration: underline; text-underline-offset: 2px; }
+
+.pm-transition-wrap {
+  min-height: 70vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 60px 40px;
+  box-sizing: border-box;
+}
+.pm-transition-text {
+  font-size: 2rem; font-weight: 800; color: #0d2b4a; line-height: 1.28; max-width: 480px;
 }
 
-.mod-flow-list-desc {
-  font-size: 14px;
-  color: #4d6178;
-  margin-top: 2px;
+.pm-titlecard-subtitle {
+  font-size: 1.1rem; font-weight: 600; color: #4d6178; margin-top: 0.75rem;
+}
+.pm-titlecard-start {
+  flex: none !important;
+  align-self: center;
+  width: auto;
+  margin-top: 2rem;
+  padding: 14px 48px !important;
 }
 
-.mod-flow-list-time {
-  margin-left: auto;
-  font-size: 14px;
-  color: #1a5f8e;
-  font-weight: 600;
+.pm-simple-list { margin: 14px 0; }
+.pm-simple-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 14px; background: #F5FAFE; border-radius: 12px; margin-bottom: 8px;
+  font-size: 0.9rem; color: #0d2b4a; font-weight: 600;
 }
+.pm-simple-time { color: #0EA5A5; font-weight: 700; font-size: 0.85rem; }
 
-.mod-flow-choice {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  background: #f5fbff;
-  border: 1.5px solid #d7e9f5;
-  border-radius: 14px;
-  padding: 16px;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
+.pm-topic-row {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  padding: 14px 16px; background: #F5FAFE; border: 1.5px solid #E2EEF8; border-radius: 14px;
+  margin-bottom: 10px; cursor: pointer; font-family: inherit; text-align: left;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.mod-flow-choice:hover {
-  border-color: #1a5f8e;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+.pm-topic-row:hover { border-color: #1B3F6E; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.pm-item-num {
+  width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem; font-weight: 700; flex-shrink: 0;
+}
+.pm-topic-text { flex: 1; }
+.pm-topic-label { font-size: 0.95rem; font-weight: 700; color: #0d2b4a; }
+.pm-topic-time { font-size: 0.78rem; color: #6B9EC4; margin-top: 2px; }
+
+.pm-btn-icon {
+  width: 52px; flex: none; border-radius: 50%; border: 1.5px solid #D0E6F5; background: #fff;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.pm-btn-icon:hover { background: #F5FAFE; }
+
+.pm-done-banner {
+  background: #dcfce7; border-radius: 12px; padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px; margin-top: 12px;
+}
+.pm-done-banner p { font-size: 0.9rem; font-weight: 700; color: #166534; margin: 0; }
+
+.pm-choice-card {
+  border: 2px solid #D0E6F5; border-radius: 20px; padding: 22px; margin-bottom: 16px;
+  cursor: pointer; transition: all 0.18s;
+}
+.pm-choice-card:hover { border-color: #1B3F6E; background: #F5FAFE; }
+.pm-choice-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.pm-choice-icon {
+  width: 48px; height: 48px; background: #E8F4FC; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.pm-choice-icon.teal { background: #E0F7F7; }
+.pm-choice-label { font-size: 1rem; font-weight: 700; color: #0d2b4a; }
+.pm-choice-desc { font-size: 0.85rem; color: #3A5068; margin: 0; line-height: 1.55; }
+
+.pm-pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px; }
+.pm-pill { border-radius: 40px; padding: 9px 16px; font-size: 0.88rem; font-weight: 700; }
+
+.pm-flip-card {
+  background: #E8F4FC; border: 2px solid #D0E6F5; border-radius: 16px;
+  padding: 16px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s; position: relative;
+}
+.pm-flip-card:hover { border-color: #1B3F6E; background: #dceef9; }
+.pm-flip-card.open { border-color: #0EA5A5; background: #E0F7F7; }
+.pm-flip-front { display: flex; align-items: center; gap: 12px; }
+.pm-flip-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-weight: 800; font-size: 1rem;
+}
+.pm-flip-text { font-size: 0.92rem; font-weight: 700; color: #0d2b4a; }
+.pm-flip-back {
+  font-size: 0.88rem; color: #3A5068; line-height: 1.6;
+  margin-top: 10px; padding-top: 10px; border-top: 1px solid #C5DFF0;
+}
+.pm-flip-chevron {
+  position: absolute; right: 16px; top: 24px; color: #6B9EC4; font-size: 1rem;
+  transition: transform 0.2s;
+}
+.pm-flip-card.open .pm-flip-chevron { transform: rotate(180deg); }
+
+.pm-recap-card {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #E8F4FC; border: 2px solid #D0E6F5; border-radius: 16px; padding: 16px;
+  margin-bottom: 12px;
 }
 
-.mod-flow-choice-label {
-  font-size: 16px;
-  font-weight: 700;
-  color: #0d2d4a;
+.pm-key-term {
+  background: #E8F4FC; border-left: 3px solid #0EA5A5;
+  border-radius: 0 10px 10px 0; padding: 12px 14px; margin: 12px 0;
 }
+.pm-key-term strong { color: #0EA5A5; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.pm-key-term p { margin: 4px 0 0; font-size: 0.9rem; color: #0d2b4a; }
 
-.mod-flow-choice-desc {
-  font-size: 14px;
-  color: #4d6178;
+.pm-field { margin-bottom: 1.1rem; }
+.pm-field-label { display: block; font-size: 0.85rem; font-weight: 600; color: #0d2b4a; margin-bottom: 6px; }
+.pm-textarea {
+  width: 100%; min-height: 100px; border: 1.5px solid #D0E6F5; border-radius: 12px;
+  padding: 12px 14px; font-family: 'DM Sans', Arial, sans-serif; font-size: 0.9rem;
+  color: #0d2b4a; resize: vertical; margin-top: 6px;
 }
+.pm-textarea:focus { outline: none; border-color: #0EA5A5; }
 
-.mod-flow-quiz-option {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.mod-flow-quiz-correct {
-  border-color: #2a9d5c;
-  background: #ecfaf1;
-}
-.mod-flow-quiz-wrong {
-  border-color: #d64545;
-  background: #fdecec;
-}
-.mod-flow-quiz-mark {
-  font-size: 18px;
-  font-weight: 700;
-}
-.mod-flow-quiz-correct .mod-flow-quiz-mark { color: #2a9d5c; }
-.mod-flow-quiz-wrong .mod-flow-quiz-mark { color: #d64545; }
+.pm-video { margin-top: 1rem; }
+.pm-video iframe { width: 100%; aspect-ratio: 16/9; border: none; border-radius: 14px; }
+.pm-video-label { font-size: 0.78rem; color: #6b7f92; margin-top: 6px; }
 
-.mod-flow-example {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.pm-q-opt {
+  padding: 11px 14px; border-radius: 10px; border: 1.5px solid #D0E6F5;
+  font-size: 0.88rem; color: #3A5068; cursor: pointer; margin-bottom: 8px; transition: all 0.15s;
 }
-.mod-flow-example-row p {
-  margin: 2px 0 0;
-  font-size: 16px;
-  color: #0d2d4a;
-}
-.mod-flow-example-tag {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #1a5f8e;
-}
+.pm-q-opt:hover { border-color: #0EA5A5; background: #F5FAFE; }
+.pm-q-opt.correct { border-color: #0EA5A5; background: #dcfce7; color: #166534; font-weight: 700; }
+.pm-q-opt.wrong { border-color: #ef4444; background: #fee2e2; color: #991b1b; font-weight: 700; }
 
-.mod-flow-field {
-  margin-bottom: 1.25rem;
+.pm-bottom-nav {
+  padding: 20px 2.5rem 40px;
+  display: flex; gap: 12px;
+  max-width: 680px; width: 100%; margin: 0 auto; box-sizing: border-box;
 }
-.mod-flow-field-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0d2d4a;
-  margin-bottom: 6px;
+.pm-btn-back, .pm-btn-next {
+  flex: 1; padding: 14px 22px; border-radius: 50px; text-align: center;
+  font-family: 'DM Sans', Arial, sans-serif; font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: all 0.18s; text-decoration: none !important; border: none;
 }
+.pm-btn-back { border: 2px solid #D0E6F5; background: #fff; color: #1B3F6E; }
+.pm-btn-back:hover { background: #D0E6F5; color: #1B3F6E; }
+.pm-btn-next { background: #1B3F6E; color: #fff; }
+.pm-btn-next:hover { background: #132E52; color: #fff; }
+.pm-cta-link { display: block; margin-top: 0.5rem; }
 
-.mod-flow-textarea {
-  width: 100%;
-  min-height: 90px;
-  border: 1.5px solid #d7e9f5;
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-family: inherit;
-  font-size: 15px;
-  color: #0d2d4a;
-  resize: vertical;
-  margin-top: 8px;
+.pm-external-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: #1B3F6E; font-weight: 700; font-size: 0.95rem;
+  text-decoration: underline; text-underline-offset: 3px;
+  margin-top: 0.5rem;
 }
-.mod-flow-textarea:focus {
-  outline: none;
-  border-color: #1a5f8e;
-}
+.pm-external-link:hover { color: #0EA5A5; }
 
-.mod-flow-video {
-  margin-top: 1.25rem;
+.pm-complete { text-align: center; padding: 20px 8px 8px; }
+.pm-complete-ring-wrap { position: relative; width: 140px; height: 140px; margin: 0 auto 24px; }
+@keyframes pmRing { 0% { transform: scale(0.6); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes pmPop { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes pmCheck { to { stroke-dashoffset: 0; } }
+@keyframes pmFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pmFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.pm-ring { position: absolute; inset: 0; border-radius: 50%; border: 3px solid #D0E6F5; animation: pmRing 1s ease-out forwards; }
+.pm-ring-2 { inset: 10px; border-color: #0EA5A5; animation-delay: 0.15s; opacity: 0; }
+.pm-ring-3 { inset: 20px; border-color: #1B3F6E; animation-delay: 0.3s; opacity: 0; }
+.pm-check-circle {
+  position: absolute; inset: 26px; border-radius: 50%; background: #1B3F6E;
+  display: flex; align-items: center; justify-content: center;
+  animation: pmPop 0.45s ease-out 0.5s both;
 }
-.mod-flow-video iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 14px;
+.pm-check-path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: pmCheck 0.4s ease-out 0.8s forwards; }
+.pm-dot { position: absolute; border-radius: 50%; animation: pmFloat 3s ease-in-out infinite; }
+.pm-dot-1 { top: 6px; left: 4px; width: 9px; height: 9px; background: #D0E6F5; }
+.pm-dot-2 { top: 30px; right: 0; width: 6px; height: 6px; background: #0EA5A5; opacity: 0.6; animation-delay: 0.5s; }
+.pm-dot-3 { bottom: 10px; left: 12px; width: 7px; height: 7px; background: #1B3F6E; opacity: 0.4; animation-delay: 1s; }
+.pm-complete-title { font-size: 1.6rem; font-weight: 900; color: #0d2b4a; margin-bottom: 10px; animation: pmFadeUp 0.5s ease-out 0.9s both; }
+.pm-complete-body { font-size: 1rem; font-weight: 700; color: #1B3F6E; animation: pmFadeUp 0.5s ease-out 1.05s both; }
+.pm-complete-links {
+  display: flex; flex-direction: column; gap: 12px; margin-top: 2rem; max-width: 340px; margin-left: auto; margin-right: auto;
+  animation: pmFadeUp 0.5s ease-out 1.15s both;
 }
-.mod-flow-video-label {
-  font-size: 13px;
-  color: #6b7f92;
-  margin-top: 6px;
-}
-
-.mod-flow-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 1.5rem;
-}
-
-.mod-flow-btn {
-  flex: 1;
-  text-align: center;
-  padding: 14px;
-  border-radius: 14px;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  text-decoration: none !important;
-}
-.mod-flow-btn-primary {
-  background: #1a5f8e;
-  color: #fff;
-}
-.mod-flow-btn-primary:hover {
-  background: #144a70;
-  color: #fff;
-}
-.mod-flow-btn-secondary {
-  background: #f5fbff;
-  color: #1a5f8e;
-  border: 1.5px solid #d7e9f5;
-}
-.mod-flow-btn-secondary:hover {
-  background: #eaf4fb;
-}
+.pm-complete-links .pm-btn-back { flex: none; }
 
 /* ── Prev/Next pagination on module pages */
 html:has(.mod-page) nav.pagination-nav {
@@ -627,7 +661,7 @@ html:has(.mod-page) a.pagination-nav__link .pagination-nav__sublabel {
 /* ── Home page ─────────────────────────────────── */
 
 html:has(.home-page) {
-  background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) fixed !important;
+  background: linear-gradient(180deg, #ffffff 0%, #85c4e8 100%) !important;
 }
 
 html:has(.home-page) body,
