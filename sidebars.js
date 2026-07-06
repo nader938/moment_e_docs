@@ -51,6 +51,8 @@ const sidebars = {
           collapsed: true,
           items: [
             { type: 'doc', id: 'avoidance', label: 'Avoidance' },
+            { type: 'doc', id: 'memory-enhancement', label: 'Keep forgetting to do your exposures?' },
+            { type: 'doc', id: 'finding-community', label: 'Finding your community' },
           ],
         },
       ],

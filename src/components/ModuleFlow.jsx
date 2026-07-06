@@ -59,7 +59,13 @@ const TRANSITION_GRADIENTS = {
   sky: 'linear-gradient(180deg, #ffffff 0%, #d4e8f5 15%, #e2f0f9 50%, #f2f8fd 80%, #ffffff 100%)',
   teal: 'linear-gradient(180deg, #ffffff 0%, #d2ebe9 15%, #e0f2f0 50%, #f0f9f8 80%, #ffffff 100%)',
   green: 'linear-gradient(180deg, #ffffff 0%, #d8f0dc 15%, #e6f6e9 50%, #f4faf5 80%, #ffffff 100%)',
+  forest: 'linear-gradient(180deg, #ffffff 0%, #bfe8c4 15%, #9edda6 50%, #e3f6e5 80%, #ffffff 100%)',
   exposure: 'linear-gradient(180deg, #ffffff 0%, #cdeaf3 15%, #a9dde9 50%, #eaf8fa 80%, #ffffff 100%)',
+};
+
+const TRANSITION_TEXT_COLORS = {
+  green: '#2a5c28',
+  forest: '#2a5c28',
 };
 
 export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back to start', originHref }) {
@@ -182,18 +188,26 @@ export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back 
       case 'transition':
         return (
           <div className="pm-transition-wrap" style={{ background: TRANSITION_GRADIENTS[page.tint || 'blue'] }}>
-            <h1 className="pm-transition-text">{page.text}</h1>
+            <h1 className="pm-transition-text" style={TRANSITION_TEXT_COLORS[page.tint] ? { color: TRANSITION_TEXT_COLORS[page.tint] } : undefined}>{page.text}</h1>
           </div>
         );
 
-      case 'title-card':
+      case 'title-card': {
+        const tcColor = TRANSITION_TEXT_COLORS[page.tint];
         return (
           <div className="pm-transition-wrap" style={{ background: '#ffffff' }}>
-            <h1 className="pm-transition-text">{page.title}</h1>
-            {page.subtitle && <p className="pm-titlecard-subtitle">{page.subtitle}</p>}
-            <button className="pm-btn-next pm-titlecard-start" onClick={goNext}>Start</button>
+            <h1 className="pm-transition-text" style={tcColor ? { color: tcColor } : undefined}>{page.title}</h1>
+            {page.subtitle && <p className="pm-titlecard-subtitle" style={tcColor ? { color: tcColor } : undefined}>{page.subtitle}</p>}
+            <button
+              className="pm-btn-next pm-titlecard-start"
+              style={tcColor ? { background: tcColor } : undefined}
+              onClick={goNext}
+            >
+              Start
+            </button>
           </div>
         );
+      }
 
       case 'content':
         return (
