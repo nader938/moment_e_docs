@@ -49,6 +49,7 @@ const pages = [
     title: 'Great work!',
     links: [
       { label: '‹ Problem Solving', href: '/moment_e_docs/problem-solving' },
+      { label: 'Value of Mistakes ›', href: '/moment_e_docs/value-of-mistakes' },
     ],
   },
 ];

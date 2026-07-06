@@ -53,7 +53,7 @@ const pages = [
     title: 'Great work!',
     links: [
       { label: '‹ Problem Solving', href: '/moment_e_docs/problem-solving' },
-      { label: 'Keep Forgetting to Do Your Exposures? ›', href: '/moment_e_docs/memory-enhancement' },
+      { label: 'Memory Enhancement ›', href: '/moment_e_docs/memory-enhancement' },
     ],
   },
 ];
