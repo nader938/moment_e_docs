@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>moment_e</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: #F5FAFE;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app {
+    width: 390px;
+    min-height: 780px;
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 8px 40px rgba(27,79,138,0.13);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: #ffffff;
+    padding: 14px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E2EEF8;
+  }
+  .topbar-logo { display: flex; align-items: center; gap: 8px; }
+  .topbar-m {
+    width: 34px; height: 34px;
+    background: #D0E6F5; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 900; color: #1B3F6E; flex-shrink: 0;
+  }
+  .topbar-wordmark { font-size: 0.95rem; font-weight: 900; color: #1B3F6E; letter-spacing: -0.01em; }
+  .topbar-wordmark span { color: #0EA5A5; }
+  .progress-wrap { display: flex; align-items: center; gap: 8px; }
+  .progress-bar { width: 90px; height: 5px; background: #E2EEF8; border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #0EA5A5; border-radius: 3px; transition: width 0.4s ease; }
+  .progress-label { font-size: 0.72rem; color: #6B9EC4; font-weight: 500; min-width: 30px; }
+
+  /* ── SCREEN ── */
+  .screen { display: none; flex: 1; flex-direction: column; }
+  .screen.active { display: flex; }
+
+  /* ── SCROLL AREA ── */
+  .scroll-area { flex: 1; overflow-y: auto; padding: 28px 24px 100px; }
+  .scroll-area::-webkit-scrollbar { width: 0; }
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 16px 24px 28px;
+    background: linear-gradient(to top, #fff 80%, transparent);
+    display: flex; gap: 12px; justify-content: center; align-items: center;
+  }
+  .btn-nav-home {
+    width: 52px; height: 52px; border-radius: 50%;
+    border: 2px solid #D0E6F5; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.18s; flex-shrink: 0;
+  }
+  .btn-nav-home:hover { background: #D0E6F5; }
+  .btn-back {
+    flex: 1; padding: 14px 22px; border-radius: 50px;
+    border: 2px solid #D0E6F5; background: #fff;
+    font-family: 'DM Sans', Arial, sans-serif; font-size: 0.9rem;
+    font-weight: 700; color: #1B3F6E; cursor: pointer; transition: all 0.18s;
+  }
+  .btn-back:hover { background: #D0E6F5; }
+  .btn-next {
+    flex: 1; padding: 14px 22px; border-radius: 50px;
+    border: none; background: #1B3F6E;
+    font-family: 'DM Sans', Arial, sans-serif; font-size: 0.9rem;
+    font-weight: 700; color: #fff; cursor: pointer; transition: all 0.18s;
+  }
+  .btn-next:hover { background: #132E52; }
+
+  /* ── TYPOGRAPHY ── */
+  .section-tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #1B3F6E; background: #D0E6F5;
+    padding: 4px 10px; border-radius: 20px; margin-bottom: 12px;
+  }
+  h1 { font-size: 1.65rem; font-weight: 900; color: #0d2b4a; line-height: 1.22; margin-bottom: 8px; }
+  h2 { font-size: 1.05rem; font-weight: 700; color: #0d2b4a; margin: 22px 0 8px; }
+  p { font-size: 0.93rem; color: #3A5068; line-height: 1.7; margin-bottom: 12px; }
+  ul { list-style: none; margin: 0 0 12px; }
+  ul li { font-size: 0.91rem; color: #3A5068; line-height: 1.65; padding: 5px 0 5px 18px; position: relative; }
+  ul li::before { content: ''; position: absolute; left: 0; top: 13px; width: 7px; height: 7px; border-radius: 50%; background: #0EA5A5; }
+  .divider { height: 1px; background: #E2EEF8; margin: 20px 0; }
+  .key-term {
+    background: #E8F4FC; border-left: 3px solid #0EA5A5;
+    border-radius: 0 10px 10px 0; padding: 12px 14px; margin: 12px 0;
+  }
+  .key-term strong { color: #0EA5A5; font-weight: 700; }
+  .key-term p { margin-bottom: 0; font-size: 0.88rem; }
+
+  /* ── SCREEN 1 ANIMATION ── */
+  @keyframes s1FadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .s1-anim { opacity: 0; animation: s1FadeUp 0.5s ease-out forwards; }
+
+  /* ── QUOTE CALLOUT ── */
+  .quote-block {
+    background: #F5FAFE; border: 1.5px solid #D0E6F5;
+    border-radius: 14px; padding: 16px 18px; margin: 14px 0;
+    position: relative;
+  }
+  .quote-block::before {
+    content: '"'; font-size: 3.5rem; font-weight: 900; color: #D0E6F5;
+    position: absolute; top: -10px; left: 14px; line-height: 1;
+  }
+  .quote-block p { font-size: 0.9rem; color: #3A5068; margin: 0; padding-top: 12px; font-style: italic; }
+
+  /* ── EXAMPLE PILL ROWS ── */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px; }
+  .pill {
+    background: #E8F4FC; border-radius: 20px; padding: 6px 14px;
+    font-size: 0.82rem; font-weight: 700; color: #1B3F6E;
+  }
+
+  /* ── INTERACTIVE FLIP CARDS ── */
+  .flip-card {
+    background: #E8F4FC; border: 2px solid #D0E6F5;
+    border-radius: 16px; padding: 16px; margin-bottom: 12px;
+    cursor: pointer; transition: all 0.2s; position: relative;
+  }
+  .flip-card:hover { border-color: #1B3F6E; background: #dceef9; }
+  .flip-card .front { display: flex; align-items: center; gap: 12px; }
+  .flip-card .front-icon {
+    width: 40px; height: 40px; background: #1B3F6E; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .flip-card .front-text { font-size: 0.92rem; font-weight: 700; color: #0d2b4a; }
+  .flip-card .back {
+    display: none; font-size: 0.88rem; color: #3A5068; line-height: 1.6;
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid #C5DFF0;
+  }
+  .flip-card.open .back { display: block; }
+  .flip-card.open { border-color: #0EA5A5; background: #E0F7F7; }
+  .flip-card .chevron { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); transition: transform 0.2s; color: #6B9EC4; font-size: 1rem; }
+  .flip-card.open .chevron { transform: translateY(-50%) rotate(180deg); }
+
+  /* ── QUIZ OPTIONS ── */
+  .q-opt {
+    padding: 11px 14px; border-radius: 10px; border: 1.5px solid #D0E6F5;
+    font-size: 0.88rem; color: #3A5068; cursor: pointer; margin-bottom: 8px; transition: all 0.15s;
+  }
+  .q-opt:hover { border-color: #0EA5A5; background: #F5FAFE; }
+  .q-opt.correct { border-color: #0EA5A5; background: #dcfce7; color: #166534; font-weight: 700; }
+  .q-opt.wrong   { border-color: #ef4444; background: #fee2e2; color: #991b1b; font-weight: 700; }
+
+  /* ── COMPLETION ANIMATIONS ── */
+  @keyframes compRing    { 0% { transform:scale(0.6);opacity:0; } 60% { opacity:1; } 100% { transform:scale(1);opacity:1; } }
+  @keyframes compPop     { 0% { transform:scale(0);opacity:0; } 70% { transform:scale(1.15); } 100% { transform:scale(1);opacity:1; } }
+  @keyframes compCheck   { to { stroke-dashoffset:0; } }
+  @keyframes compFadeUp  { from { opacity:0;transform:translateY(16px); } to { opacity:1;transform:translateY(0); } }
+  @keyframes compFloat   { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="topbar-m">M</div>
+      <div class="topbar-wordmark">moment<span>_e</span></div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+      <div class="progress-label" id="prog-label">0 / 7</div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SCREEN 0: SPLASH HOME ══════════════ -->
+  <div class="screen active" id="s0" style="position:relative;overflow:hidden;background:#1B3F6E;">
+
+    <!-- Slow animated waves -->
+    <svg style="position:absolute;bottom:0;left:0;width:100%;pointer-events:none;" viewBox="0 0 390 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="wave wave1" d="M0,180 C60,140 120,220 195,180 C270,140 330,210 390,170 L390,320 L0,320 Z" fill="rgba(14,165,165,0.18)"/>
+      <path class="wave wave2" d="M0,210 C70,170 140,240 195,205 C260,165 320,230 390,200 L390,320 L0,320 Z" fill="rgba(14,165,165,0.12)"/>
+      <path class="wave wave3" d="M0,245 C80,215 150,265 195,240 C250,210 320,255 390,230 L390,320 L0,320 Z" fill="rgba(91,164,212,0.14)"/>
+    </svg>
+
+    <!-- Top wave -->
+    <svg style="position:absolute;top:0;left:0;width:100%;pointer-events:none;transform:rotate(180deg);" viewBox="0 0 390 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="wave wave2" d="M0,80 C80,40 160,110 195,75 C240,35 320,95 390,60 L390,160 L0,160 Z" fill="rgba(14,165,165,0.1)"/>
+    </svg>
+
+    <!-- Centre content -->
+    <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px;text-align:center;">
+
+      <div style="animation:splashFadeUp 0.7s ease-out 0.2s both;">
+        <div style="font-size:1.05rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0EA5A5;margin-bottom:20px;">CEQI Domain #5</div>
+      </div>
+
+      <div style="animation:splashFadeUp 0.7s ease-out 0.55s both;">
+        <h1 style="font-size:2.4rem;font-weight:900;color:#ffffff;line-height:1.18;margin-bottom:0;letter-spacing:-0.02em;">Tolerating<br>Discomfort</h1>
+      </div>
+
+      <div style="height:3px;background:#0EA5A5;border-radius:2px;margin:24px auto;animation:splashLine 0.6s ease-out 1s both;width:64px;"></div>
+
+    </div>
+
+    <!-- Let's Start button -->
+    <div style="position:relative;z-index:2;padding:0 24px 36px;">
+      <div style="animation:splashFadeUp 0.7s ease-out 1.5s both;">
+        <button onclick="go(3)" style="width:100%;padding:16px 22px;border-radius:50px;border:none;background:#0EA5A5;font-family:'DM Sans',Arial,sans-serif;font-size:1rem;font-weight:800;color:#fff;cursor:pointer;transition:all 0.2s;box-shadow:0 8px 24px rgba(14,165,165,0.4);" onmouseover="this.style.background='#0c8f8f';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0EA5A5';this.style.transform='translateY(0)'">
+          Let's Start →
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    @keyframes waveMove1 { 0%,100%{d:path("M0,180 C60,140 120,220 195,180 C270,140 330,210 390,170 L390,320 L0,320 Z");} 50%{d:path("M0,195 C70,155 130,235 195,190 C255,148 325,220 390,185 L390,320 L0,320 Z");} }
+    @keyframes waveMove2 { 0%,100%{d:path("M0,210 C70,170 140,240 195,205 C260,165 320,230 390,200 L390,320 L0,320 Z");} 50%{d:path("M0,220 C60,185 145,250 195,215 C250,178 315,242 390,210 L390,320 L0,320 Z");} }
+    @keyframes waveMove3 { 0%,100%{d:path("M0,245 C80,215 150,265 195,240 C250,210 320,255 390,230 L390,320 L0,320 Z");} 50%{d:path("M0,255 C75,228 155,272 195,250 C245,222 318,263 390,242 L390,320 L0,320 Z");} }
+    .wave1 { animation: waveMove1 8s ease-in-out infinite; }
+    .wave2 { animation: waveMove2 11s ease-in-out infinite; }
+    .wave3 { animation: waveMove3 7s ease-in-out 1s infinite; }
+    @keyframes splashFadeUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes splashLine { from{width:0;opacity:0;} to{width:64px;opacity:1;} }
+  </style>
+
+  <!-- ══════════════ SCREEN 1: LEARNING STYLE ══════════════ -->
+  <div class="screen" id="s1">
+    <div class="scroll-area">
+      <h1 style="font-size:1.5rem;margin-bottom:28px;">How would you like to learn today?</h1>
+
+      <!-- Option 1: Step by step -->
+      <div onclick="go(4)" style="border:2px solid #D0E6F5;border-radius:20px;padding:22px;margin-bottom:16px;cursor:pointer;transition:all 0.18s;" onmouseover="this.style.borderColor='#1B3F6E';this.style.background='#F5FAFE'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+          <div style="width:48px;height:48px;background:#E8F4FC;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div style="font-size:1rem;font-weight:700;color:#0d2b4a;">Step by step</div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem;color:#3A5068;margin:0;line-height:1.55;">We'll go through each section together, one at a time.</p>
+      </div>
+
+      <!-- Option 2: Explore freely -->
+      <div onclick="go(2)" style="border:2px solid #D0E6F5;border-radius:20px;padding:22px;cursor:pointer;transition:all 0.18s;" onmouseover="this.style.borderColor='#0EA5A5';this.style.background='#EDFAFA'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+          <div style="width:48px;height:48px;background:#E0F7F7;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#0EA5A5" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M4.9 19.1l2.1-2.1M16.9 7.1l2.1-2.1" stroke="#0EA5A5" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-size:1rem;font-weight:700;color:#0d2b4a;">Explore freely</div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem;color:#3A5068;margin:0;line-height:1.55;">Pick any topic and explore in whatever order works for you.</p>
+      </div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(3)">Back</button>
+      <button class="btn-next" style="opacity:0.3;pointer-events:none;">Next</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ EXPLORE FREELY: TOPIC PICKER ══════════════ -->
+  <div class="screen" id="s2">
+    <div class="scroll-area">
+
+      <h1 style="font-size:1.6rem;margin-bottom:24px;">Choose a topic</h1>
+
+      <!-- Topic 1 -->
+      <div onclick="go(4)" style="border:2px solid #D0E6F5;border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:16px;" onmouseover="this.style.borderColor='#1B3F6E';this.style.background='#F5FAFE'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="width:44px;height:44px;background:#1B3F6E;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;font-weight:900;color:#fff;">1</div>
+        <div style="flex:1;">
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;">Discomfort is not the same as Danger</div>
+          <div style="font-size:0.75rem;color:#6B9EC4;margin-top:3px;">4 min</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#C0D8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Topic 2 -->
+      <div onclick="go(5)" style="border:2px solid #D0E6F5;border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:16px;" onmouseover="this.style.borderColor='#0EA5A5';this.style.background='#EDFAFA'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="width:44px;height:44px;background:#0EA5A5;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;font-weight:900;color:#fff;">2</div>
+        <div style="flex:1;">
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;">Why We Choose Discomfort</div>
+          <div style="font-size:0.75rem;color:#6B9EC4;margin-top:3px;">4 min</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#C0D8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Topic 3 -->
+      <div onclick="go(6)" style="border:2px solid #D0E6F5;border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:16px;" onmouseover="this.style.borderColor='#5BA4D4';this.style.background='#F0F7FD'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="width:44px;height:44px;background:#5BA4D4;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;font-weight:900;color:#fff;">3</div>
+        <div style="flex:1;">
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;">Find Your Own Value in Being Uncomfortable</div>
+          <div style="font-size:0.75rem;color:#6B9EC4;margin-top:3px;">5 min</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#C0D8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Topic 4 -->
+      <div onclick="go(7)" style="border:2px solid #D0E6F5;border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:16px;" onmouseover="this.style.borderColor='#A78BFA';this.style.background='#F5F3FF'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="width:44px;height:44px;background:#C4B5FD;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;font-weight:900;color:#4C1D95;">4</div>
+        <div style="flex:1;">
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;">Discomfort is a Good Sign During Exposure</div>
+          <div style="font-size:0.75rem;color:#6B9EC4;margin-top:3px;">4 min</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#C0D8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <!-- Topic 5 -->
+      <div onclick="go(8)" style="border:2px solid #D0E6F5;border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:16px;" onmouseover="this.style.borderColor='#7EB8D4';this.style.background='#F0F8FC'" onmouseout="this.style.borderColor='#D0E6F5';this.style.background='#fff'">
+        <div style="width:44px;height:44px;background:#A8D4E8;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;font-weight:900;color:#1B3F6E;">5</div>
+        <div style="flex:1;">
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;">Apply What You've Learned to Your Exposures</div>
+          <div style="font-size:0.75rem;color:#6B9EC4;margin-top:3px;">3 min</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#C0D8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(1)">Back</button>
+      <button class="btn-next" style="opacity:0.3;pointer-events:none;">Next</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ SCREEN 2: INTRO + SPEECH BUBBLE ══════════════ -->
+  <div class="screen" id="s3">
+    <div class="scroll-area">
+
+      <!-- Three speech bubbles -->
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px;margin-top:8px;">
+
+        <div style="background:#F5FAFE;border:1.5px solid #D0E6F5;border-radius:16px 16px 16px 4px;padding:16px 18px;align-self:flex-start;max-width:85%;">
+          <p style="font-size:1rem;font-weight:700;color:#1B3F6E;line-height:1.5;margin:0;font-style:italic;">"I don't want to keep doing this"</p>
+        </div>
+
+        <div style="background:#F5FAFE;border:1.5px solid #D0E6F5;border-radius:16px 16px 4px 16px;padding:16px 18px;align-self:flex-end;max-width:85%;">
+          <p style="font-size:1rem;font-weight:700;color:#1B3F6E;line-height:1.5;margin:0;font-style:italic;">"I can't handle this much discomfort"</p>
+        </div>
+
+        <div style="background:#F5FAFE;border:1.5px solid #D0E6F5;border-radius:16px 16px 16px 4px;padding:16px 18px;align-self:flex-start;max-width:85%;">
+          <p style="font-size:1rem;font-weight:700;color:#1B3F6E;line-height:1.5;margin:0;font-style:italic;">"But I don't like feeling uncomfortable"</p>
+        </div>
+
+      </div>
+
+      <!-- Does this sound like you -->
+      <p style="font-size:1.4rem;font-weight:800;color:#0d2b4a;text-align:center;margin-bottom:20px;">Does this sound like you? Let's talk about it.</p>
+
+      <p style="font-size:1rem;color:#3A5068;line-height:1.7;">Feeling uncomfortable is no fun, but it is actually a critical part of exposure.</p>
+
+      <div class="divider"></div>
+
+      <div style="background:#dcfce7;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#166534" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="#166534" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p style="font-size:0.95rem;font-weight:700;color:#166534;margin:0;">Module time: 20 minutes</p>
+      </div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(0)">Back</button>
+      <button class="btn-nav-home" onclick="go(2)" title="Topics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn-next" onclick="go(1)">Next</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes wb1anim { 0%,100%{d:path("M0,140 C60,110 120,160 171,135 C222,110 282,155 342,130 L342,220 L0,220 Z");} 50%{d:path("M0,150 C65,122 125,168 171,145 C218,120 278,162 342,140 L342,220 L0,220 Z");} }
+    @keyframes wb2anim { 0%,100%{d:path("M0,160 C70,135 130,175 171,155 C215,132 275,168 342,148 L342,220 L0,220 Z");} 50%{d:path("M0,168 C68,146 135,182 171,163 C210,140 272,175 342,156 L342,220 L0,220 Z");} }
+    @keyframes wb3anim { 0%,100%{d:path("M0,185 C80,165 145,195 171,178 C200,160 268,188 342,170 L342,220 L0,220 Z");} 50%{d:path("M0,192 C78,174 148,200 171,185 C198,168 265,194 342,178 L342,220 L0,220 Z");} }
+    .wb1 { animation: wb1anim 9s ease-in-out infinite; }
+    .wb2 { animation: wb2anim 12s ease-in-out infinite; }
+    .wb3 { animation: wb3anim 7s ease-in-out 1s infinite; }
+  </style>
+
+  <script>
+    const mgLines = [
+      "When doing exposures, sometimes they feel really uncomfortable.",
+      "It is natural to think — \"I don't want to keep doing this\" or \"I can't handle this much discomfort.\"",
+      "This is really part of the process of change.",
+      "Feeling uncomfortable is no fun — but it is actually a critical part of the process.",
+      "Here, we'll explore why feeling uncomfortable during your exposures is not only expected, but essential.",
+      "We'll also discuss why leaning into that discomfort is the best thing you can do."
+    ];
+    const mgDurations = [3200, 4500, 2800, 3500, 4200, 4000];
+    const mgTotal = mgDurations.reduce((a,b)=>a+b,0);
+
+    let mgPlaying = false;
+    let mgIndex = 0;
+    let mgElapsed = 0;
+    let mgLineTimer = null;
+    let mgLineStart = null;
+
+    function mgSetLine(i) {
+      const txt = document.getElementById('mgText');
+      txt.style.opacity = '0';
+      setTimeout(() => {
+        txt.textContent = mgLines[i];
+        txt.style.transition = 'opacity 0.4s';
+        txt.style.opacity = '1';
+      }, 200);
+    }
+
+    function mgUpdateProgress() {
+      if (!mgPlaying) return;
+      const now = Date.now();
+      const totalElapsed = mgElapsed + (now - mgLineStart);
+      const pct = Math.min(100, (totalElapsed / mgTotal) * 100);
+      document.getElementById('mgProgress').style.width = pct + '%';
+      const secLeft = Math.max(0, Math.round((mgTotal - totalElapsed) / 1000));
+      document.getElementById('mgTimer').textContent = secLeft > 0 ? `${secLeft}s remaining` : 'Complete';
+      if (mgPlaying) requestAnimationFrame(mgUpdateProgress);
+    }
+
+    function mgPlayLine(i) {
+      if (i >= mgLines.length) { mgFinish(); return; }
+      mgIndex = i;
+      mgLineStart = Date.now();
+      mgSetLine(i);
+      mgLineTimer = setTimeout(() => {
+        mgElapsed += mgDurations[i];
+        mgPlayLine(i + 1);
+      }, mgDurations[i]);
+    }
+
+    function mgToggle() {
+      if (mgPlaying) {
+        mgPlaying = false;
+        clearTimeout(mgLineTimer);
+        document.getElementById('mgPlayIcon').innerHTML = '<polygon points="6,3 20,12 6,21" fill="white"/>';
+        document.getElementById('mgTimer').textContent = 'Paused';
+      } else {
+        mgPlaying = true;
+        document.getElementById('mgPlayIcon').innerHTML = '<rect x="5" y="3" width="4" height="18" fill="white"/><rect x="15" y="3" width="4" height="18" fill="white"/>';
+        mgLineStart = Date.now();
+        mgPlayLine(mgIndex);
+        requestAnimationFrame(mgUpdateProgress);
+      }
+    }
+
+    function mgRestart() {
+      mgPlaying = false;
+      clearTimeout(mgLineTimer);
+      mgIndex = 0;
+      mgElapsed = 0;
+      document.getElementById('mgProgress').style.width = '0%';
+      document.getElementById('mgText').textContent = '';
+      document.getElementById('mgTimer').textContent = 'Press play to begin';
+      document.getElementById('mgPlayIcon').innerHTML = '<polygon points="6,3 20,12 6,21" fill="white"/>';
+    }
+
+    function mgFinish() {
+      mgPlaying = false;
+      mgIndex = 0;
+      mgElapsed = 0;
+      document.getElementById('mgPlayIcon').innerHTML = '<polygon points="6,3 20,12 6,21" fill="white"/>';
+      document.getElementById('mgTimer').textContent = 'Press play to replay';
+      document.getElementById('mgProgress').style.width = '100%';
+    }
+  </script>
+
+  <!-- ══════════════ SCREEN 3: DISCOMFORT ≠ DANGER ══════════════ -->
+  <div class="screen" id="s4">
+    <div class="scroll-area">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:48px;height:48px;background:#1B3F6E;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;font-weight:900;color:#fff;">1</div>
+        <h1 style="margin-bottom:0;font-size:1.75rem;">Discomfort is not the same as Danger</h1>
+      </div>
+
+      <p>During an exposure challenge, discomfort can take many forms:</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px;">
+        <div style="background:#DBEAFE;border:1.5px solid #BFDBFE;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#1e40af;">Rapid heart rate</div>
+        <div style="background:#FCE7F3;border:1.5px solid #F9A8D4;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#9d174d;">Shortness of breath</div>
+        <div style="background:#FEF3C7;border:1.5px solid #FDE68A;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#92400e;">Hot flushes</div>
+        <div style="background:#D1FAE5;border:1.5px solid #6EE7B7;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#065f46;">Trembling</div>
+        <div style="background:#E0E7FF;border:1.5px solid #C7D2FE;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#3730a3;">Sweating</div>
+        <div style="background:#FEE2E2;border:1.5px solid #FECACA;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#991b1b;">Dizziness</div>
+        <div style="background:#F3E8FF;border:1.5px solid #DDD6FE;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#6b21a8;">Negative thoughts</div>
+        <div style="background:#CCFBF1;border:1.5px solid #99F6E4;border-radius:40px;padding:9px 16px;font-size:0.88rem;font-weight:700;color:#134e4a;">Feelings of guilt</div>
+      </div>
+
+      <p style="font-size:0.95rem;font-weight:700;color:#0d2b4a;margin:16px 0 6px;">Why do we experience these feelings?</p>
+      <p style="font-size:0.95rem;color:#3A5068;line-height:1.75;">These responses have evolved as part of the fight-or-flight response, a survival mechanism that helps us respond to immediate threats. However, they are not helpful when the "threat" is not real (e.g., fear of contamination, unwanted intrusive thoughts, etc.).</p>
+
+      <div class="divider"></div>
+
+      <p style="font-size:1rem;color:#3A5068;line-height:1.75;">It may feel like this discomfort will keep increasing until something catastrophic happens. But the reality is, the system is designed to help us survive so, <strong style="color:#0d2b4a;background:#FEF9C3;padding:2px 4px;border-radius:4px;">it may be uncomfortable, but it is not dangerous, and it will not last forever.</strong> Knowing this, you can remind yourself when doing exposures.</p>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(1)">Back</button>
+      <button class="btn-nav-home" onclick="go(2)" title="Topics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn-next" onclick="go(5)">Next</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ SCREEN 4: FIND YOUR OWN VALUE ══════════════ -->
+  <div class="screen" id="s5">
+    <div class="scroll-area">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:48px;height:48px;background:#0EA5A5;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;font-weight:900;color:#fff;">2</div>
+        <h1 style="margin-bottom:0;font-size:1.75rem;">Why We Choose Discomfort</h1>
+      </div>
+
+      <p>We choose discomfort in many areas of our lives. For example, not many people look forward to going to the dentist, especially if they know they have a cavity. They do it because it pays in the long run. Same goes for working out when we would rather stay in bed.</p>
+
+      <p>There are also bigger challenges like running a marathon that people choose to test their limits. Exposures can be your marathon, a challenge that will make a big impact on your life but as the saying goes, no pain, no gain and that applies here just as it does in running a marathon.</p>
+
+      <!-- Two column chart -->
+      <div style="border-radius:16px;overflow:hidden;border:1.5px solid #D0E6F5;margin-bottom:20px;">
+
+        <!-- Header row -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="background:#1B3F6E;padding:12px 14px;text-align:center;">
+            <span style="font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;">Uncomfortable thing</span>
+          </div>
+          <div style="background:#0EA5A5;padding:12px 14px;text-align:center;">
+            <span style="font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;">Value</span>
+          </div>
+        </div>
+
+        <!-- Row 1 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E2EEF8;">
+          <div style="padding:13px 14px;background:#F5FAFE;border-right:1px solid #E2EEF8;">
+            <p style="font-size:0.88rem;font-weight:600;color:#0d2b4a;margin:0;">Going to the dentist</p>
+          </div>
+          <div style="padding:13px 14px;background:#fff;">
+            <p style="font-size:0.88rem;color:#3A5068;margin:0;">Clean, healthy teeth</p>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E2EEF8;">
+          <div style="padding:13px 14px;background:#F5FAFE;border-right:1px solid #E2EEF8;">
+            <p style="font-size:0.88rem;font-weight:600;color:#0d2b4a;margin:0;">Working out instead of staying in bed</p>
+          </div>
+          <div style="padding:13px 14px;background:#fff;">
+            <p style="font-size:0.88rem;color:#3A5068;margin:0;">A healthy body</p>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E2EEF8;">
+          <div style="padding:13px 14px;background:#F5FAFE;border-right:1px solid #E2EEF8;">
+            <p style="font-size:0.88rem;font-weight:600;color:#0d2b4a;margin:0;">Running a marathon</p>
+          </div>
+          <div style="padding:13px 14px;background:#fff;">
+            <p style="font-size:0.88rem;color:#3A5068;margin:0;">Personal achievement</p>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E2EEF8;">
+          <div style="padding:13px 14px;background:#F5FAFE;border-right:1px solid #E2EEF8;">
+            <p style="font-size:0.88rem;font-weight:600;color:#0d2b4a;margin:0;">Going to a job interview</p>
+          </div>
+          <div style="padding:13px 14px;background:#fff;">
+            <p style="font-size:0.88rem;color:#3A5068;margin:0;">Career growth</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <div style="background:#E8F4FC;border-radius:14px;padding:16px 18px;">
+        <p style="font-size:0.92rem;color:#3A5068;margin:0;">So you do hard things because you <strong style="color:#1B3F6E;">value them</strong> and believe you can cope with the discomfort to gain results.</p>
+      </div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(4)">Back</button>
+      <button class="btn-nav-home" onclick="go(2)" title="Topics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn-next" onclick="go(6)">Next</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ SCREEN 5: APPLY TO EXPOSURES ══════════════ -->
+  <div class="screen" id="s6">
+    <div class="scroll-area">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:48px;height:48px;background:#5BA4D4;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;font-weight:900;color:#fff;">3</div>
+        <h1 style="margin-bottom:0;font-size:1.75rem;">Find Your Own Value in Being Uncomfortable</h1>
+      </div>
+
+      <p>A helpful first step is to pause and think of a time when you did something uncomfortable, whether small or big, and found it to be worthwhile.</p>
+
+      <div style="background:#F5FAFE;border:1.5px solid #D0E6F5;border-radius:14px;padding:16px 18px;margin:16px 0;">
+        <p style="font-size:0.9rem;font-weight:700;color:#1B3F6E;margin-bottom:8px;">Then ask yourself:</p>
+        <p style="font-size:1rem;font-weight:800;color:#0d2b4a;margin-bottom:0;line-height:1.5;">"What did I gain from my willingness to experience this discomfort?"</p>
+      </div>
+
+      <p style="font-size:0.92rem;color:#3A5068;margin-bottom:12px;">Maybe it led to...</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 20px;">
+        <div style="background:#E0F7F7;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#0B7A7A;">A moment of joy</div>
+        </div>
+        <div style="background:#E8F4FC;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#1B3F6E;">Greater confidence</div>
+        </div>
+        <div style="background:#E8F4FC;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#1B3F6E;">Helped someone else</div>
+        </div>
+        <div style="background:#E0F7F7;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#0B7A7A;">Improved health</div>
+        </div>
+        <div style="background:#F3E8FF;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#6b21a8;">Started a hobby I stopped because of my anxiety</div>
+        </div>
+        <div style="background:#FCE7F3;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#9d174d;">Tried something new</div>
+        </div>
+        <div style="background:#FEF3C7;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:0.85rem;font-weight:700;color:#92400e;">Made a new friend</div>
+        </div>
+      </div>
+
+      <p>These are some of the things that make life rich and fulfilling, and more often than not, they are waiting for us on the other side of discomfort.</p>
+
+      <div style="height:10px;"></div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(5)">Back</button>
+      <button class="btn-nav-home" onclick="go(2)" title="Topics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn-next" onclick="go(7)">Next</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ SCREEN 7: DISCOMFORT IS A GOOD SIGN ══════════════ -->
+  <div class="screen" id="s7">
+    <div class="scroll-area">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:48px;height:48px;background:#C4B5FD;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;font-weight:900;color:#4C1D95;">4</div>
+        <h1 style="margin-bottom:0;font-size:1.75rem;">Discomfort is a Good Sign During Exposure</h1>
+      </div>
+
+      <p>Feeling uncomfortable during an exposure is not a sign that something is going wrong. It is actually a sign that something is going <strong style="background:#FEF9C3;color:#0d2b4a;padding:2px 4px;border-radius:4px;">right.</strong></p>
+
+      <div class="divider"></div>
+
+      <!-- Point 1 -->
+      <div style="display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;">
+        <div style="min-width:44px;height:44px;background:#1B3F6E;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 4v16M18 4v16M6 12h12" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M3 6c0-1.1.9-2 2-2h1v16H5a2 2 0 0 1-2-2V6zM21 6a2 2 0 0 0-2-2h-1v16h1a2 2 0 0 0 2-2V6z" fill="white" opacity="0.3"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;margin-bottom:4px;">Discomfort means change is happening</div>
+          <p style="font-size:0.88rem;color:#3A5068;line-height:1.6;margin:0;">Like the muscle burn when you are doing pushups, it means you are working hard and getting stronger.</p>
+        </div>
+      </div>
+
+      <!-- Point 2 -->
+      <div style="display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;">
+        <div style="min-width:44px;height:44px;background:#0EA5A5;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2a7 7 0 0 1 7 7c0 3-1.8 5.6-4.5 6.7V17a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1v-1.3C6.8 14.6 5 12 5 9a7 7 0 0 1 7-7z" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21h6" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;margin-bottom:4px;">Your brain is learning something new</div>
+          <p style="font-size:0.88rem;color:#3A5068;line-height:1.6;margin:0;">Staying in the situation teaches your brain that you can cope. That learning only happens through the discomfort.</p>
+        </div>
+      </div>
+
+      <!-- Point 3 -->
+      <div style="display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;">
+        <div style="min-width:44px;height:44px;background:#5BA4D4;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.95rem;font-weight:700;color:#0d2b4a;margin-bottom:4px;">Tolerating it builds confidence</div>
+          <p style="font-size:0.88rem;color:#3A5068;line-height:1.6;margin:0;">Every time you push through, you prove to yourself you can handle it.</p>
+        </div>
+      </div>
+
+      <div style="height:10px;"></div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(6)">Back</button>
+      <button class="btn-nav-home" onclick="go(2)" title="Topics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn-next" onclick="go(8)">Next</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ SCREEN 8: APPLY TO EXPOSURES ══════════════ -->
+  <div class="screen" id="s8">
+    <div class="scroll-area">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:48px;height:48px;background:#A8D4E8;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;font-weight:900;color:#1B3F6E;">5</div>
+        <h1 style="margin-bottom:0;font-size:1.75rem;">Apply This to Your Exposure Challenges</h1>
+      </div>
+
+      <p>Now let's bring this understanding to your exposure challenges.</p>
+
+      <div class="divider"></div>
+
+      <div style="background:#F5FAFE;border:1.5px solid #D0E6F5;border-radius:16px;padding:18px 18px 14px;">
+        <p style="font-size:1.1rem;font-weight:700;color:#0d2b4a;margin-bottom:4px;">Your turn</p>
+        <p style="font-size:0.88rem;color:#3A5068;margin-bottom:14px;">Pick one exposure from your hierarchy. Then answer below:</p>
+        <p style="font-size:1rem;font-weight:700;color:#1B3F6E;margin-bottom:8px;">What can I gain from my willingness to be uncomfortable and do this?</p>
+        <textarea style="width:100%;border:1.5px solid #D0E6F5;border-radius:12px;padding:12px;font-family:'DM Sans',Arial,sans-serif;font-size:0.88rem;color:#3A5068;resize:none;outline:none;height:110px;box-sizing:border-box;" placeholder="Write your answer here..."></textarea>
+      </div>
+
+      <div style="height:10px;"></div>
+
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-back" onclick="go(7)">Back</button>
+      <button class="btn-nav-home" onclick="go(2)" title="Topics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="#1B3F6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn-next" onclick="showCompletion()">Finish</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ COMPLETION SCREEN ══════════════ -->
+  <div id="s-complete" style="display:none;position:fixed;inset:0;background:#fff;flex-direction:column;align-items:center;justify-content:center;z-index:200;padding:40px 32px;text-align:center;">
+    <div style="position:relative;width:160px;height:160px;margin-bottom:32px;">
+      <div style="position:absolute;inset:0;border-radius:50%;border:3px solid #D0E6F5;animation:compRing 1.2s ease-out forwards;"></div>
+      <div style="position:absolute;inset:10px;border-radius:50%;border:3px solid #0EA5A5;animation:compRing 1.2s ease-out 0.2s forwards;opacity:0;"></div>
+      <div style="position:absolute;inset:20px;border-radius:50%;border:3px solid #1B3F6E;animation:compRing 1.2s ease-out 0.4s forwards;opacity:0;"></div>
+      <div style="position:absolute;inset:30px;border-radius:50%;background:#1B3F6E;display:flex;align-items:center;justify-content:center;animation:compPop 0.5s ease-out 0.6s both;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <path d="M10 22l9 9 15-15" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" style="animation:compCheck 0.5s ease-out 0.9s forwards;"/>
+        </svg>
+      </div>
+    </div>
+    <h1 style="font-size:1.9rem;font-weight:900;color:#0d2b4a;margin-bottom:12px;animation:compFadeUp 0.6s ease-out 1s both;">Congrats!</h1>
+    <p style="font-size:1.1rem;font-weight:700;color:#1B3F6E;margin-bottom:8px;animation:compFadeUp 0.6s ease-out 1.15s both;">You've completed Tolerating Discomfort During Exposures.</p>
+    <div style="position:absolute;top:60px;left:40px;width:10px;height:10px;border-radius:50%;background:#D0E6F5;animation:compFloat 3s ease-in-out infinite;"></div>
+    <div style="position:absolute;top:100px;right:50px;width:7px;height:7px;border-radius:50%;background:#0EA5A5;opacity:0.5;animation:compFloat 3s ease-in-out 0.5s infinite;"></div>
+    <div style="position:absolute;bottom:120px;left:60px;width:8px;height:8px;border-radius:50%;background:#1B3F6E;opacity:0.3;animation:compFloat 3s ease-in-out 1s infinite;"></div>
+    <div style="position:absolute;bottom:160px;right:40px;width:12px;height:12px;border-radius:50%;background:#D0E6F5;animation:compFloat 3s ease-in-out 1.5s infinite;"></div>
+    <button onclick="document.getElementById('s-complete').style.display='none'; quizSelected=null; go(2);" style="margin-top:40px;padding:16px 40px;border-radius:50px;border:none;background:#1B3F6E;font-family:'DM Sans',Arial,sans-serif;font-size:0.95rem;font-weight:700;color:#fff;cursor:pointer;animation:compFadeUp 0.6s ease-out 1.5s both;">Back to start</button>
+  </div>
+
+</div><!-- /app -->
+
+<script>
+  const TOTAL = 6;
+  let quizSelected = null;
+
+  function go(n) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('s' + n).classList.add('active');
+    const scrollArea = document.getElementById('s' + n).querySelector('.scroll-area');
+    if (scrollArea) scrollArea.scrollTop = 0;
+    // s0 is the splash — show 0/7 with no fill
+    if (n === 0) {
+      document.getElementById('prog').style.width = '0%';
+      document.getElementById('prog-label').textContent = '0 / ' + (TOTAL - 1);
+    } else {
+      const pct = Math.round(((n) / (TOTAL - 1)) * 100);
+      document.getElementById('prog').style.width = pct + '%';
+      document.getElementById('prog-label').textContent = n + ' / ' + (TOTAL - 1);
+    }
+    if (n === 7) { quizSelected = null; }
+  }
+
+  function toggleFlip(card) {
+    card.classList.toggle('open');
+  }
+
+  function quizPick(el, val) {
+    if (quizSelected) return;
+    quizSelected = val;
+    document.querySelectorAll('#quiz-opts .q-opt').forEach(o => {
+      const letter = o.textContent.trim()[0];
+      if (letter === 'C') o.classList.add('correct');
+      else if (o === el && val !== 'C') o.classList.add('wrong');
+      o.style.cursor = 'default';
+      o.onclick = null;
+    });
+  }
+
+  function quizSubmit() {
+    if (!quizSelected) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const res = document.getElementById('quiz-result');
+    const txt = document.getElementById('quiz-result-text');
+    res.style.display = 'block';
+    if (quizSelected === 'C') {
+      txt.textContent = 'Correct! Discomfort during exposures means you are engaging with what matters — that is exactly where change happens.';
+      res.style.background = '#E0F7F7';
+      txt.style.color = '#0EA5A5';
+    } else {
+      txt.textContent = 'Not quite. The correct answer is C. Discomfort is a sign you are doing the hard, meaningful work.';
+      res.style.background = '#FFF1F1';
+      txt.style.color = '#E87B7B';
+    }
+    setTimeout(() => showCompletion(), 900);
+  }
+
+  function showCompletion() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    const comp = document.getElementById('s-complete');
+    comp.style.display = 'flex';
+  }
+</script>
+</body>
+</html>
