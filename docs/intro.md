@@ -93,4 +93,15 @@ slug: /
   </div>
 </div>
 
+<h2 class="using-section-title" style={{marginTop:'3rem'}}>Share This Site</h2>
+
+<div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'0.75rem', marginTop:'1.25rem', marginBottom:'2rem'}}>
+  <img
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fnader938.github.io%2Fmoment_e_docs%2F"
+    alt="QR code for moment_e docs site"
+    style={{width:'200px', height:'200px', borderRadius:'12px', boxShadow:'0 2px 12px rgba(0,0,0,0.10)'}}
+  />
+  <span style={{fontSize:'0.8rem', color:'var(--ifm-color-emphasis-600)'}}>nader938.github.io/moment_e_docs</span>
+</div>
+
 </div>
