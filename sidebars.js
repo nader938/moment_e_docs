@@ -13,6 +13,7 @@ const sidebars = {
         { type: 'doc', id: 'tutorial-cognitive', label: 'Cognitive Tasks' },
         { type: 'doc', id: 'tutorial-graphing', label: 'Graphing' },
         { type: 'doc', id: 'tutorial-questionnaires', label: 'Questionnaires' },
+        { type: 'doc', id: 'tutorial-hierarchy', label: 'Hierarchy Tool' },
       ],
     },
     {

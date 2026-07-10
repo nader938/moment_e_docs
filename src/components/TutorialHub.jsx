@@ -98,6 +98,18 @@ const groups = [
       },
     ],
   },
+  {
+    label: 'Hierarchy Tool',
+    tutorials: [
+      {
+        id: 'hierarchy-tool',
+        label: 'Using the Hierarchy Tool',
+        desc: 'How to use the hierarchy tool in moment_e to build and manage your exposure hierarchy.',
+        src: '/moment_e_docs/img/hierarchy_tool_demo.mp4',
+        icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 6h4v4H3zM10 6h4v4h-4zM17 6h4v4h-4z" stroke="#1a5f8e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v2M12 10v4M19 10v2M5 12h14" stroke="#1a5f8e" strokeWidth="1.8" strokeLinecap="round"/><rect x="8" y="16" width="8" height="4" rx="1" stroke="#1a5f8e" strokeWidth="1.8"/></svg>,
+      },
+    ],
+  },
 ];
 
 function VideoPlaceholder() {
