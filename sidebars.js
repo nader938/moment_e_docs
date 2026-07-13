@@ -52,6 +52,7 @@ const sidebars = {
           collapsed: true,
           items: [
             { type: 'doc', id: 'avoidance', label: 'Avoidance' },
+            { type: 'doc', id: 'habit-formation', label: 'Habit formation' },
             { type: 'doc', id: 'memory-enhancement', label: 'Memory enhancement' },
             { type: 'doc', id: 'finding-community', label: 'Finding your community' },
             { type: 'doc', id: 'value-of-mistakes', label: 'Value of mistakes' },
