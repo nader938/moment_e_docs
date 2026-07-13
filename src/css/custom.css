@@ -421,7 +421,7 @@ html:has(.pm-app) article {
 
 .pm-h1 { font-size: 34px; font-weight: 800; color: #000; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1rem; }
 .pm-subheading { font-size: 1.15rem; font-weight: 800; color: #0d2b4a; margin: 0.5rem 0 0.85rem; }
-.pm-p { font-size: 0.93rem; color: #3A5068; line-height: 1.7; margin-bottom: 12px; }
+.pm-p { font-size: 1.05rem; color: #3A5068; line-height: 1.75; margin-bottom: 14px; }
 .pm-hint { font-size: 0.88rem; color: #3A5068; font-style: italic; margin-bottom: 10px; }
 .pm-excerpt-note {
   font-size: 0.85rem; font-style: italic; color: #6B9EC4; margin-bottom: 1rem;
@@ -515,7 +515,7 @@ html:has(.pm-app) article {
 }
 .pm-flip-text { font-size: 0.92rem; font-weight: 700; color: #0d2b4a; }
 .pm-flip-back {
-  font-size: 0.88rem; color: #3A5068; line-height: 1.6;
+  font-size: 1rem; color: #3A5068; line-height: 1.65;
   margin-top: 10px; padding-top: 10px; border-top: 1px solid #C5DFF0;
 }
 .pm-flip-chevron {
@@ -535,7 +535,7 @@ html:has(.pm-app) article {
   border-radius: 0 10px 10px 0; padding: 12px 14px; margin: 12px 0;
 }
 .pm-key-term strong { color: #0EA5A5; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
-.pm-key-term p { margin: 4px 0 0; font-size: 0.9rem; color: #0d2b4a; }
+.pm-key-term p { margin: 4px 0 0; font-size: 1rem; color: #0d2b4a; }
 
 .pm-field { margin-bottom: 1.1rem; }
 .pm-field-label { display: block; font-size: 0.85rem; font-weight: 600; color: #0d2b4a; margin-bottom: 6px; }

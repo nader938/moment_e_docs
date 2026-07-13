@@ -39,8 +39,8 @@ const pages = [
   },
   {
     type: 'content',
-    title: 'Keeping your "why" close',
-    body: 'Once you have identified your "why," keep it somewhere you can see it. Write it down or take a photo of it. Come back to it on the hard days.',
+    title: 'Make your "why" specific',
+    body: 'Once you have identified your "why," write it down. Take a photo of it if you can. The more specific it is, the more it will mean to you when things get hard.',
   },
   {
     type: 'completion',
@@ -54,7 +54,7 @@ const pages = [
 const topics = [
   { label: 'What is your "why"?', time: '1.5 min', startIndex: 3 },
   { label: 'Finding your "why"', time: '1.5 min', startIndex: 4 },
-  { label: 'Keeping your "why" close', time: '1 min', startIndex: 5 },
+  { label: 'Make your "why" specific', time: '1 min', startIndex: 5 },
 ];
 
 export default function ValuedExposuresModule() {
