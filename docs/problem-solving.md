@@ -18,5 +18,7 @@ hide_title: true
   <a class="mod-item mod-item-link" href="/moment_e_docs/finding-community"><div class="mod-item-num mod-badge-5">7</div><span class="mod-item-name">Finding your community</span><span class="mod-chev">›</span></a>
   <a class="mod-item mod-item-link" href="/moment_e_docs/helping-loved-one"><div class="mod-item-num mod-badge-5">8</div><span class="mod-item-name">Helping a loved one do an exposure</span><span class="mod-chev">›</span></a>
   <a class="mod-item mod-item-link" href="/moment_e_docs/being-uncomfortable"><div class="mod-item-num mod-badge-5">9</div><span class="mod-item-name">Being uncomfortable</span><span class="mod-chev">›</span></a>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/lacking-motivation"><div class="mod-item-num mod-badge-5">10</div><span class="mod-item-name">Lacking motivation</span><span class="mod-chev">›</span></a>
+  <a class="mod-item mod-item-link" href="/moment_e_docs/self-care"><div class="mod-item-num mod-badge-5">11</div><span class="mod-item-name">Self-care during and after exposures</span><span class="mod-chev">›</span></a>
 </div>
 </div>

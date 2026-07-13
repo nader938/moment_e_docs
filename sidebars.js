@@ -59,6 +59,8 @@ const sidebars = {
             { type: 'doc', id: 'living-with-uncertainty', label: 'Living with uncertainty' },
             { type: 'doc', id: 'helping-loved-one', label: 'Helping a loved one do an exposure' },
             { type: 'doc', id: 'being-uncomfortable', label: 'Being uncomfortable' },
+            { type: 'doc', id: 'lacking-motivation', label: 'Lacking motivation' },
+            { type: 'doc', id: 'self-care', label: 'Self-care during and after exposures' },
           ],
         },
       ],
