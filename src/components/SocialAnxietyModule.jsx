@@ -4,13 +4,14 @@ import ModuleFlow from './ModuleFlow';
 const pages = [
   {
     type: 'intro',
-    intro: 'Today you will learn 3 things about social anxiety',
+    intro: 'Today you will learn 4 things about social anxiety',
     items: [
       { label: 'What is social anxiety', time: '3.5 min' },
       { label: 'Symptoms of social anxiety', time: '4.5 min' },
       { label: 'The social anxiety cycle', time: '2 min' },
+      { label: 'Cognitive restructuring', time: '5 min' },
     ],
-    footer: 'About 10 minutes total',
+    footer: 'About 15 minutes total',
   },
   {
     type: 'choice',
@@ -188,7 +189,36 @@ const pages = [
     body: 'Watch this video on the social anxiety cycle to learn more.',
     video: { label: 'National Social Anxiety Center', url: 'https://www.youtube.com/watch?v=gHQHl1IKYeg' },
   },
-  { type: 'transition', text: "Let's recap the 3 things you learned today", tint: 'blue' },
+  { type: 'transition', text: "Now let's explore cognitive restructuring", tint: 'teal' },
+  {
+    type: 'content',
+    title: 'Cognitive Restructuring',
+    body: 'There are ways we can "categorize" some of our anxious and unhelpful thoughts. Why would we care to do this? By categorizing our anxious thoughts, we can observe if there are certain patterns to our thinking.\n\nFurthermore, identifying these patterns can give us a headstart in how to combat our "frequent flier" anxious thoughts, because we can be aware that we have a tendency to fall into a particular pattern.\n\nTake a look at these commonly-identified patterns of anxious thoughts. Click on each one to learn more.',
+  },
+  {
+    type: 'components',
+    title: 'Patterns of anxious thoughts',
+    body: 'Click on each pattern below to learn more.',
+    items: [
+      { num: 1, label: 'Black and White Thinking', desc: 'Seeing everything in extremes; there is no room for the middle ground. People are right or wrong and situations are good or bad.' },
+      { num: 2, label: 'Mental Filtering', desc: 'Only seeing the negative parts of situations, or only seeing what is wrong with yourself. For example, you might leave a party only remembering that you forgot someone\'s name or spilled your drink.' },
+      { num: 3, label: 'Overgeneralizing', desc: 'Believing that the results of one situation predict the results of all future situations. If your thoughts often involve "all," "never," "always," and "every" you might be overgeneralizing. For example: "I will always be a failure in social situations."' },
+      { num: 4, label: 'Jumping to Conclusions', desc: 'Believing that you know what others are thinking (mind reading) or predicting the future (fortune-telling). For example: "He must think I am boring to talk to" or "I am going to embarrass myself at this party."' },
+      { num: 5, label: 'Emotional Reasoning', desc: 'Believing that if you feel something it must be true. You might believe that because you feel anxious, there is something in a situation to be feared. Feelings can have many causes and do not always reflect reality.' },
+      { num: 6, label: 'Personalizing', desc: 'Blaming yourself for external events outside of your control. Whether you are partly to blame or not to blame at all, you believe that external events are entirely your fault.' },
+      { num: 7, label: 'Catastrophizing', desc: 'Turning small problems into big ones or blowing things out of proportion. For example, thinking that giving a poor presentation at work will mean your coworkers will dislike you and you may lose your job.' },
+      { num: 8, label: 'Shoulding and Musting', desc: 'Thoughts such as "I must always do everything perfectly" or "I should always agree with what people say." These are arbitrary rules that are not always helpful to cling to.' },
+      { num: 9, label: 'Labeling', desc: 'Making global statements about people or situations based on specific circumstances. For example, labeling yourself as "boring" despite evidence to the contrary.' },
+      { num: 10, label: 'Magnification and Minimization', desc: 'Magnifying good things about other people while minimizing good things about yourself. This goes beyond being humble; people with this pattern do not recognize their own good qualities.' },
+      { num: 11, label: 'Maladaptive Thoughts', desc: 'Thoughts that are not necessarily distorted, but not helpful to dwell on. For example, "I\'ve never done this before" might be true, but it\'s not helpful to dwell on. Ask yourself: Does this thought help my mood? Does it help me think productively about the situation?' },
+    ],
+  },
+  {
+    type: 'content',
+    title: 'How to dispute these thoughts',
+    body: 'How can you dispute some of these thoughts? By asking yourself questions about the truthfulness of the thoughts. For example: are the thoughts you are having 100% accurate?\n\nOver the next week, continue monitoring the physiological, behavioral, and cognitive components of situations where you felt socially anxious, but now:\n\n1. Start to categorize your thoughts using the patterns above.\n\n2. Determine if the thoughts are 100% accurate.',
+  },
+  { type: 'transition', text: "Let's recap the 4 things you learned today", tint: 'blue' },
   {
     type: 'recap',
     title: 'Recap',
@@ -208,6 +238,11 @@ const pages = [
         title: 'The avoidance cycle',
         body: 'Avoidance brings short-term relief, but stops you from learning that you can cope, making the anxiety stronger over time.',
       },
+      {
+        num: 4,
+        title: 'Cognitive restructuring',
+        body: 'By categorizing anxious thoughts into patterns, we can identify our "frequent fliers" and learn to question whether those thoughts are 100% accurate.',
+      },
     ],
   },
   {
@@ -226,6 +261,7 @@ const topics = [
   { label: 'Cognitive symptoms', time: '1.5 min', startIndex: 5 },
   { label: 'Situations that trigger social anxiety', time: '1.5 min', startIndex: 6 },
   { label: 'The social anxiety cycle', time: '2 min', startIndex: 14 },
+  { label: 'Cognitive restructuring', time: '5 min', startIndex: 17 },
 ];
 
 export default function SocialAnxietyModule() {
