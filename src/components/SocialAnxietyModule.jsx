@@ -30,54 +30,9 @@ const pages = [
     video: { label: 'Anxiety & Depression Association of America', url: 'https://www.youtube.com/watch?v=WeTbl3AzrtA' },
   },
   {
-    type: 'symptoms',
-    title: 'Physical symptoms',
-    body: 'Social anxiety shows up in the body. These are some of the most common physical reactions people experience.',
-    items: [
-      'Blushing',
-      'Sweating',
-      'Trembling or shaking',
-      'Racing heart',
-      'Nausea or upset stomach',
-      'Shortness of breath',
-      'Dizziness',
-      'Mind going blank',
-    ],
-    prompt: 'Take a moment. Do you notice any of these in your body?',
-  },
-  {
-    type: 'symptoms',
-    title: 'Cognitive symptoms',
-    body: 'Social anxiety also affects how we think. These are common thoughts and mental patterns.',
-    items: [
-      'Fear of being judged',
-      'Fear of embarrassing yourself',
-      'Intense worry beforehand',
-      'Replaying conversations afterward',
-      'Overestimating how badly things went',
-      'Assuming others noticed your anxiety',
-      'Mind-reading ("They think I\'m stupid")',
-      'Catastrophizing ("I\'ll humiliate myself")',
-    ],
-    prompt: 'Do any of these thought patterns feel familiar?',
-  },
-  {
-    type: 'symptoms',
-    title: 'Situations that trigger social anxiety',
-    body: 'Social anxiety can be triggered by many everyday situations. Some of the most common include:',
-    items: [
-      'Meeting new people',
-      'Speaking in public',
-      'Being the center of attention',
-      'Eating or drinking in front of others',
-      'Starting or joining conversations',
-      'Talking to authority figures',
-      'Being watched while doing something',
-      'Dating or romantic situations',
-      'Using the phone in public',
-      'Attending parties or social events',
-    ],
-    prompt: 'Which of these situations feel most difficult for you?',
+    type: 'content',
+    title: 'Common symptoms of social anxiety',
+    body: 'Symptoms\n\nBlushing or sweating\nTrembling or shaking\nRacing heart\nNausea or upset stomach\nShortness of breath\nDizziness\nMind going blank\nFear of being judged\nFear of embarrassing yourself\nIntense worry beforehand\nReplaying conversations afterward\n\nSituations that trigger social anxiety\n\nMeeting new people\nSpeaking in public\nBeing the center of attention\nEating or drinking in front of others\nStarting or joining conversations\nTalking to authority figures\nBeing watched while doing something\nDating or romantic situations\nUsing the phone in public\nAttending parties or social events',
   },
   { type: 'transition', text: 'There are 3 components of social anxiety', tint: 'sky' },
   {
@@ -257,11 +212,9 @@ const pages = [
 
 const topics = [
   { label: 'What is social anxiety', time: '3.5 min', startIndex: 3 },
-  { label: 'Physical symptoms', time: '1.5 min', startIndex: 4 },
-  { label: 'Cognitive symptoms', time: '1.5 min', startIndex: 5 },
-  { label: 'Situations that trigger social anxiety', time: '1.5 min', startIndex: 6 },
-  { label: 'The social anxiety cycle', time: '2 min', startIndex: 14 },
-  { label: 'Cognitive restructuring', time: '5 min', startIndex: 17 },
+  { label: 'Symptoms of social anxiety', time: '2 min', startIndex: 4 },
+  { label: 'The social anxiety cycle', time: '2 min', startIndex: 12 },
+  { label: 'Cognitive restructuring', time: '5 min', startIndex: 15 },
 ];
 
 export default function SocialAnxietyModule() {

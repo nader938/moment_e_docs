@@ -222,7 +222,11 @@ export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back 
               </p>
             )}
             {page.body.split('\n\n').map((para, i) => (
-              <p className="pm-p" key={i}>{para}</p>
+              <p className="pm-p" key={i}>
+                {para.split('\n').map((line, j, arr) => (
+                  <React.Fragment key={j}>{line}{j < arr.length - 1 && <br />}</React.Fragment>
+                ))}
+              </p>
             ))}
             {page.video && renderVideo(page.video)}
           </>
