@@ -228,6 +228,13 @@ export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back 
                 ))}
               </p>
             ))}
+            {page.questions && (
+              <div style={{ margin: '20px 0', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {page.questions.map((q, i) => (
+                  <p key={i} style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0d2b4a', margin: 0, lineHeight: 1.4 }}>{q}</p>
+                ))}
+              </div>
+            )}
             {page.video && renderVideo(page.video)}
           </>
         );

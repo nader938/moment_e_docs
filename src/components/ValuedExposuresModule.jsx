@@ -30,7 +30,12 @@ const pages = [
   {
     type: 'content',
     title: 'Finding your "why"',
-    body: 'Take a moment to think about what has brought you here. Ask yourself:\n\nWhat would my life look like if anxiety was not holding me back?\n\nWhat activities or relationships have I pulled away from because of anxiety?\n\nWho or what am I doing this for?\n\nThere are no right or wrong answers. Your "why" might be a person, a feeling, a goal, or just a version of yourself you want to get back to.',
+    body: 'Take a moment to think about what has brought you here. Ask yourself:\n\nThere are no right or wrong answers. Your "why" might be a person, a feeling, a goal, or just a version of yourself you want to get back to.',
+    questions: [
+      'What would my life look like if anxiety was not holding me back?',
+      'What activities or relationships have I pulled away from because of anxiety?',
+      'Who or what am I doing this for?',
+    ],
   },
   {
     type: 'content',
