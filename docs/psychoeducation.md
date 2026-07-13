@@ -15,6 +15,6 @@ title: Psychoeducation
 <div class="module-item">Dos / don'ts for your hierarchy</div>
 <div class="module-item">How to do an exposure for social anxiety</div>
 <div class="module-item">How to do an exposure for panic</div>
-<div class="module-item">How to do an exposure — OCD subtypes</div>
+<div class="module-item">How to do an exposure - OCD subtypes</div>
 
 </div>

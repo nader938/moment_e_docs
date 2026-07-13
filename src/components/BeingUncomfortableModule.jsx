@@ -30,17 +30,17 @@ const pages = [
   {
     type: 'content',
     title: '1. Discomfort is not the same as DANGER',
-    body: 'During an exposure challenge, discomfort can take many forms — e.g., rapid heart rate, shortness of breath, hot flushes, etc. These responses have evolved as part of the fight-or-flight response, a survival mechanism that helps us respond to immediate threats. However, they are not helpful when the "threat" is not real (e.g., fear of contamination, unwanted intrusive thoughts, etc.).\n\nIt may feel like this discomfort will keep increasing until something catastrophic happens. But the reality is, the system is designed to help us survive — so it may be uncomfortable, but it is not dangerous, and it will not last forever.\n\nKnowing this, you can remind yourself when doing exposures.',
+    body: 'During an exposure challenge, discomfort can take many forms - e.g., rapid heart rate, shortness of breath, hot flushes, etc. These responses have evolved as part of the fight-or-flight response, a survival mechanism that helps us respond to immediate threats. However, they are not helpful when the "threat" is not real (e.g., fear of contamination, unwanted intrusive thoughts, etc.).\n\nIt may feel like this discomfort will keep increasing until something catastrophic happens. But the reality is, the system is designed to help us survive - so it may be uncomfortable, but it is not dangerous, and it will not last forever.\n\nKnowing this, you can remind yourself when doing exposures.',
   },
   {
     type: 'content',
     title: '2. Choosing discomfort',
-    body: 'We choose discomfort in many areas of our lives. For example, not many people look forward to going to the dentist, especially if they know they have a cavity. They do it because it pays in the long run. Same goes for working out when we would rather stay in bed.\n\nThere are also bigger challenges like running a marathon that people choose to test their limits. Exposures can be your marathon — a challenge that will make a big impact on your life. As the saying goes, no pain, no gain, and that applies here just as it does in running a marathon.\n\nSo you do hard things because you value them and believe you can cope with the discomfort to gain results.',
+    body: 'We choose discomfort in many areas of our lives. For example, not many people look forward to going to the dentist, especially if they know they have a cavity. They do it because it pays in the long run. Same goes for working out when we would rather stay in bed.\n\nThere are also bigger challenges like running a marathon that people choose to test their limits. Exposures can be your marathon - a challenge that will make a big impact on your life. As the saying goes, no pain, no gain, and that applies here just as it does in running a marathon.\n\nSo you do hard things because you value them and believe you can cope with the discomfort to gain results.',
   },
   {
     type: 'content',
     title: '3. Find your own value in being uncomfortable',
-    body: 'A helpful first step is to pause and think of a time when you did something uncomfortable — whether small or big — and found it to be worthwhile. Then ask yourself, "What did I gain from my willingness to experience this discomfort?"\n\nMaybe it led to a moment of joy, improved health, greater confidence, helped someone else, or simply made your day more productive. These are some of the things that make life rich and fulfilling, and more often than not, they are waiting for us on the other side of discomfort.',
+    body: 'A helpful first step is to pause and think of a time when you did something uncomfortable - whether small or big - and found it to be worthwhile. Then ask yourself, "What did I gain from my willingness to experience this discomfort?"\n\nMaybe it led to a moment of joy, improved health, greater confidence, helped someone else, or simply made your day more productive. These are some of the things that make life rich and fulfilling, and more often than not, they are waiting for us on the other side of discomfort.',
   },
   {
     type: 'content',

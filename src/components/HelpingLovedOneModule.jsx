@@ -25,12 +25,12 @@ const pages = [
   {
     type: 'content',
     title: 'How do I help a loved one do an exposure?',
-    body: 'Supporting someone you care about through an exposure can be a meaningful way to help them face their fears. At the same time, it can feel challenging or even uncomfortable.\n\nThis module will guide you in providing support that is helpful, encouraging, and effective — without getting in the way of their progress.',
+    body: 'Supporting someone you care about through an exposure can be a meaningful way to help them face their fears. At the same time, it can feel challenging or even uncomfortable.\n\nThis module will guide you in providing support that is helpful, encouraging, and effective - without getting in the way of their progress.',
   },
   {
     type: 'content',
     title: '1. Understand the goal of exposure',
-    body: 'The goal of an exposure is for your loved one to face the fear without avoiding or doing any safety behaviors that they usually rely on. The discomfort they feel is part of the process — it\'s not dangerous, even if it looks distressing.\n\nIt can be tempting to step in to "make things easier" or reassure them. However, doing so will actually reduce the effectiveness of the exposure.\n\nThink of it like learning to ride a bike. When helping someone ride a bike, you need to let them find their own balance. If you hold the handlebars every time, they\'ll never learn to ride on their own.',
+    body: 'The goal of an exposure is for your loved one to face the fear without avoiding or doing any safety behaviors that they usually rely on. The discomfort they feel is part of the process - it\'s not dangerous, even if it looks distressing.\n\nIt can be tempting to step in to "make things easier" or reassure them. However, doing so will actually reduce the effectiveness of the exposure.\n\nThink of it like learning to ride a bike. When helping someone ride a bike, you need to let them find their own balance. If you hold the handlebars every time, they\'ll never learn to ride on their own.',
   },
   {
     type: 'content',
@@ -45,7 +45,7 @@ const pages = [
   {
     type: 'content',
     title: '4. Celebrate Effort',
-    body: 'Exposure is about practice, not perfection. Celebrate your loved one\'s effort, their courage to face discomfort, and the steps they are taking — even if they didn\'t complete the exposure perfectly.\n\nSaying things like:\n• "I\'m proud of you for trying that, even though it was hard"\n• "Look at how far you\'ve come since we started"',
+    body: 'Exposure is about practice, not perfection. Celebrate your loved one\'s effort, their courage to face discomfort, and the steps they are taking - even if they didn\'t complete the exposure perfectly.\n\nSaying things like:\n• "I\'m proud of you for trying that, even though it was hard"\n• "Look at how far you\'ve come since we started"',
   },
   {
     type: 'completion',

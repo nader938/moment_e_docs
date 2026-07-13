@@ -9,7 +9,7 @@ hide_title: true
 <p class="install-sub">A clinical research platform developed at San Diego State University</p>
 
 <div class="about-card">
-  <p class="about-body">moment_e is a mobile research app for iOS and Android built to support ecological momentary assessment (EMA) studies. It captures real-time data on mental health, behavior, and physiology — wherever participants are in their daily lives.</p>
+  <p class="about-body">moment_e is a mobile research app for iOS and Android built to support ecological momentary assessment (EMA) studies. It captures real-time data on mental health, behavior, and physiology - wherever participants are in their daily lives.</p>
 </div>
 
 <h2 class="using-section-title" style={{marginTop:'2rem'}}>Research Focus</h2>
@@ -33,7 +33,7 @@ hide_title: true
 <h2 class="using-section-title" style={{marginTop:'2rem'}}>Version History</h2>
 
 <div class="about-version-card">
-  <div class="about-version-tag">v13.04 — Current</div>
+  <div class="about-version-tag">v13.04 - Current</div>
   <div class="about-version-date">May 2026</div>
   <div class="mod-item-list" style={{marginTop:'1rem'}}>
     <div class="mod-item"><div class="mod-item-num mod-badge-2">·</div><span class="mod-item-name">Per-question CEQI aggregate table</span></div>
