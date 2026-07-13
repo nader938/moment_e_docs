@@ -25,7 +25,7 @@ const pages = [
   {
     type: 'content',
     title: 'What is Your "Why"?',
-    body: 'Everyone has a reason for why they are trying out exposure. For some people it is being able to go to the grocery store without dread, or sitting through a meeting without your heart racing, being present for your kids, reconnecting with friends you have been avoiding, or getting back to activities you used to love — hiking, and so much more.\n\nYour "why" is personal. It does not have to be dramatic or profound. It just has to be real to you.\n\nWhen treatment feels hard (and sometimes it will) your "why" is what you come back to. It is the reason you keep showing up, keep doing the exposures, even when it is hard.',
+    body: 'Everyone has a reason for why they are trying out exposure. For some people it is being able to go to the grocery store without dread, or sitting through a meeting without your heart racing, being present for your kids, reconnecting with friends you have been avoiding, or getting back to activities you used to love.\n\nYour "why" is personal. It does not have to be dramatic or profound. It just has to be real to you.\n\nWhen treatment feels hard (and sometimes it will) your "why" is what you come back to. It is the reason you keep showing up, keep doing the exposures, even when it is hard.',
   },
   {
     type: 'content',
