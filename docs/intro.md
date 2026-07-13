@@ -104,4 +104,11 @@ slug: /
   <span style={{fontSize:'0.8rem', color:'var(--ifm-color-emphasis-600)'}}>nader938.github.io/moment_e_docs</span>
 </div>
 
+<div style={{marginTop:'3rem', padding:'1.25rem 1.5rem', borderRadius:'10px', border:'1px solid var(--ifm-color-emphasis-300)', backgroundColor:'var(--ifm-color-emphasis-100)'}}>
+  <p style={{fontWeight:700, fontSize:'0.85rem', marginBottom:'0.75rem', color:'var(--ifm-color-emphasis-700)'}}>Medical Disclaimer &amp; Limitation of Liability</p>
+  <p style={{fontSize:'0.8rem', color:'var(--ifm-color-emphasis-600)', marginBottom:'0.5rem'}}><strong>1. Not a Substitute for Live Clinical Judgment:</strong> This App is a digital tool designed to facilitate and track exposure therapy exercises under the direct supervision of a licensed mental health professional. It does not provide medical advice, independent clinical diagnoses, or real-time crisis intervention.</p>
+  <p style={{fontSize:'0.8rem', color:'var(--ifm-color-emphasis-600)', marginBottom:'0.5rem'}}><strong>2. No Real-Time Monitoring:</strong> The App does not monitor user data in real-time. Therapists will only review data during scheduled sessions or at their own clinical discretion. Submission of data within the App does not constitute a notification to your therapist.</p>
+  <p style={{fontSize:'0.8rem', color:'var(--ifm-color-emphasis-600)', marginBottom:'0'}}><strong>3. Emergency Situations:</strong> If you experience a psychiatric emergency, severe panic that threatens your safety, or thoughts of self-harm, do not rely on the App or wait for your therapist to review your logs. Immediately contact emergency services (911) or call/text the Suicide &amp; Crisis Lifeline at 988.</p>
+</div>
+
 </div>
