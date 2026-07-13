@@ -62,6 +62,7 @@ const sidebars = {
             { type: 'doc', id: 'being-uncomfortable', label: 'Being uncomfortable' },
             { type: 'doc', id: 'lacking-motivation', label: 'Lacking motivation' },
             { type: 'doc', id: 'self-care', label: 'Self-care during and after exposures' },
+            { type: 'doc', id: 'family-support', label: 'Family member support' },
           ],
         },
       ],
