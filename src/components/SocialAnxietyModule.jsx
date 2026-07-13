@@ -32,7 +32,7 @@ const pages = [
   {
     type: 'content',
     title: 'Common symptoms of social anxiety',
-    body: 'Symptoms\n\nBlushing or sweating\nTrembling or shaking\nRacing heart\nNausea or upset stomach\nShortness of breath\nDizziness\nMind going blank\nFear of being judged\nFear of embarrassing yourself\nIntense worry beforehand\nReplaying conversations afterward\n\nSituations that trigger social anxiety\n\nMeeting new people\nSpeaking in public\nBeing the center of attention\nEating or drinking in front of others\nStarting or joining conversations\nTalking to authority figures\nBeing watched while doing something\nDating or romantic situations\nUsing the phone in public\nAttending parties or social events',
+    body: 'Blushing or sweating\nTrembling or shaking\nRacing heart\nNausea or upset stomach\nShortness of breath\nDizziness\nMind going blank\nFear of being judged\nFear of embarrassing yourself\nIntense worry beforehand\nReplaying conversations afterward\n\n## Situations that trigger social anxiety\n\nMeeting new people\nSpeaking in public\nBeing the center of attention\nEating or drinking in front of others\nStarting or joining conversations\nTalking to authority figures\nBeing watched while doing something\nDating or romantic situations\nUsing the phone in public\nAttending parties or social events',
   },
   { type: 'transition', text: 'There are 3 components of social anxiety', tint: 'sky' },
   {

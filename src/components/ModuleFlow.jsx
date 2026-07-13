@@ -221,13 +221,18 @@ export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back 
                 </a>
               </p>
             )}
-            {page.body.split('\n\n').map((para, i) => (
-              <p className="pm-p" key={i}>
-                {para.split('\n').map((line, j, arr) => (
-                  <React.Fragment key={j}>{line}{j < arr.length - 1 && <br />}</React.Fragment>
-                ))}
-              </p>
-            ))}
+            {page.body.split('\n\n').map((para, i) => {
+              if (para.startsWith('## ')) {
+                return <p key={i} style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0d2b4a', margin: '18px 0 6px' }}>{para.slice(3)}</p>;
+              }
+              return (
+                <p className="pm-p" key={i}>
+                  {para.split('\n').map((line, j, arr) => (
+                    <React.Fragment key={j}>{line}{j < arr.length - 1 && <br />}</React.Fragment>
+                  ))}
+                </p>
+              );
+            })}
             {page.questions && (
               <div style={{ margin: '20px 0', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {page.questions.map((q, i) => (
