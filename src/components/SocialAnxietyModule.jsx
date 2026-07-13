@@ -30,16 +30,53 @@ const pages = [
   },
   {
     type: 'symptoms',
-    title: 'Common symptoms of social anxiety',
+    title: 'Physical symptoms',
+    body: 'Social anxiety shows up in the body. These are some of the most common physical reactions people experience.',
+    items: [
+      'Blushing',
+      'Sweating',
+      'Trembling or shaking',
+      'Racing heart',
+      'Nausea or upset stomach',
+      'Shortness of breath',
+      'Dizziness',
+      'Mind going blank',
+    ],
+    prompt: 'Take a moment. Do you notice any of these in your body?',
+  },
+  {
+    type: 'symptoms',
+    title: 'Cognitive symptoms',
+    body: 'Social anxiety also affects how we think. These are common thoughts and mental patterns.',
     items: [
       'Fear of being judged',
-      'Intense worry beforehand',
-      'Blushing or sweating',
-      'Avoiding situations',
       'Fear of embarrassing yourself',
-      'Replaying conversations',
+      'Intense worry beforehand',
+      'Replaying conversations afterward',
+      'Overestimating how badly things went',
+      'Assuming others noticed your anxiety',
+      'Mind-reading ("They think I\'m stupid")',
+      'Catastrophizing ("I\'ll humiliate myself")',
     ],
-    prompt: 'Take a moment. Do you experience some or all of these?',
+    prompt: 'Do any of these thought patterns feel familiar?',
+  },
+  {
+    type: 'symptoms',
+    title: 'Situations that trigger social anxiety',
+    body: 'Social anxiety can be triggered by many everyday situations. Some of the most common include:',
+    items: [
+      'Meeting new people',
+      'Speaking in public',
+      'Being the center of attention',
+      'Eating or drinking in front of others',
+      'Starting or joining conversations',
+      'Talking to authority figures',
+      'Being watched while doing something',
+      'Dating or romantic situations',
+      'Using the phone in public',
+      'Attending parties or social events',
+    ],
+    prompt: 'Which of these situations feel most difficult for you?',
   },
   { type: 'transition', text: 'There are 3 components of social anxiety', tint: 'sky' },
   {
@@ -139,8 +176,10 @@ const pages = [
 
 const topics = [
   { label: 'What is social anxiety', time: '3.5 min', startIndex: 3 },
-  { label: 'Symptoms of social anxiety', time: '4.5 min', startIndex: 4 },
-  { label: 'The social anxiety cycle', time: '2 min', startIndex: 12 },
+  { label: 'Physical symptoms', time: '1.5 min', startIndex: 4 },
+  { label: 'Cognitive symptoms', time: '1.5 min', startIndex: 5 },
+  { label: 'Situations that trigger social anxiety', time: '1.5 min', startIndex: 6 },
+  { label: 'The social anxiety cycle', time: '2 min', startIndex: 14 },
 ];
 
 export default function SocialAnxietyModule() {
