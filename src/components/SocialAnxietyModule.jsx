@@ -82,6 +82,7 @@ const pages = [
   {
     type: 'components',
     title: 'The 3 components of social anxiety',
+    body: 'Click on each component below to learn more.',
     items: [
       { num: 1, label: 'Physiological', desc: 'What is going on in your body, the physical sensations anxiety creates.' },
       { num: 2, label: 'Behavioral', desc: 'How you act, the things you do or avoid when anxiety takes hold.' },
@@ -91,7 +92,8 @@ const pages = [
   },
   {
     type: 'example',
-    title: 'Example 1',
+    title: 'Example 1: The Boss Situation',
+    emoji: '💼',
     situation: 'I had to talk to my boss.',
     physiological: 'The physical symptoms I experienced were pins and needles and sweaty palms.',
     behavioral: 'I tried to cut the conversation short. I was shaking.',
@@ -99,7 +101,8 @@ const pages = [
   },
   {
     type: 'example',
-    title: 'Example 2',
+    title: 'Example 2: Ordering a Coffee',
+    emoji: '☕',
     situation: 'I wanted to order a coffee at a busy café.',
     physiological: 'My voice came out quieter than I intended and my hands were trembling slightly.',
     behavioral: 'I rehearsed my order over and over in my head before reaching the counter.',
@@ -107,7 +110,8 @@ const pages = [
   },
   {
     type: 'example',
-    title: 'Example 3',
+    title: 'Example 3: The Grocery Store',
+    emoji: '🛒',
     situation: 'I ran into an acquaintance unexpectedly at the grocery store.',
     physiological: 'I felt a wave of nausea and my mind went completely blank.',
     behavioral: 'I turned into a different aisle to avoid them and left the shop early.',

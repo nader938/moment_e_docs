@@ -266,6 +266,9 @@ export default function ModuleFlow({ pages, topics, doneHref, doneLabel = 'Back 
       case 'example':
         return (
           <>
+            {page.emoji && (
+              <div style={{ textAlign: 'center', fontSize: '64px', lineHeight: 1, marginBottom: '12px' }}>{page.emoji}</div>
+            )}
             <h1 className="pm-h1">{page.title}</h1>
             <div className="pm-key-term">
               <strong>The feared situation</strong>
