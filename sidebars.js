@@ -43,6 +43,7 @@ const sidebars = {
             { type: 'doc', id: 'exposure-therapy', label: 'What is exposure therapy' },
             { type: 'doc', id: 'creating-hierarchy', label: 'What is an exposure hierarchy' },
             { type: 'doc', id: 'high-quality-exposure', label: 'How do we do exposures' },
+            { type: 'doc', id: 'mindfulness-during-exposure', label: 'Mindfulness during exposure' },
           ],
         },
         {
