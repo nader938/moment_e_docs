@@ -68,7 +68,7 @@ const sidebars = {
         },
       ],
     },
-    { type: 'doc', id: 'report', label: 'Report a Bug' },
+    { type: 'doc', id: 'report', label: 'Feedback' },
   ],
 };
 
