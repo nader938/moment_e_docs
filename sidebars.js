@@ -57,6 +57,8 @@ const sidebars = {
             { type: 'doc', id: 'finding-community', label: 'Finding your community' },
             { type: 'doc', id: 'value-of-mistakes', label: 'Value of mistakes' },
             { type: 'doc', id: 'living-with-uncertainty', label: 'Living with uncertainty' },
+            { type: 'doc', id: 'helping-loved-one', label: 'Helping a loved one do an exposure' },
+            { type: 'doc', id: 'being-uncomfortable', label: 'Being uncomfortable' },
           ],
         },
       ],
