@@ -44,6 +44,7 @@ const sidebars = {
             { type: 'doc', id: 'creating-hierarchy', label: 'What is an exposure hierarchy' },
             { type: 'doc', id: 'high-quality-exposure', label: 'How do we do exposures' },
             { type: 'doc', id: 'mindfulness-during-exposure', label: 'Mindfulness during exposure' },
+            { type: 'doc', id: 'valued-exposures', label: 'Doing valued exposures' },
           ],
         },
         {
