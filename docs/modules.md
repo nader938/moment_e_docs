@@ -21,20 +21,8 @@ hide_title: true
   <span class="mod-chev">›</span>
 </a>
 
-<a class="mod-card" href="/moment_e_docs/creating-hierarchy">
-  <div class="mod-badge mod-badge-3">3</div>
-  <span class="mod-card-label">Creating a hierarchy</span>
-  <span class="mod-chev">›</span>
-</a>
-
-<a class="mod-card" href="/moment_e_docs/high-quality-exposure">
-  <div class="mod-badge mod-badge-4">4</div>
-  <span class="mod-card-label">Completing high quality exposures</span>
-  <span class="mod-chev">›</span>
-</a>
-
 <a class="mod-card" href="/moment_e_docs/problem-solving">
-  <div class="mod-badge mod-badge-5">5</div>
+  <div class="mod-badge mod-badge-3">3</div>
   <span class="mod-card-label">Problem solving</span>
   <span class="mod-chev">›</span>
 </a>
