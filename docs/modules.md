@@ -40,7 +40,7 @@ hide_title: true
 </a>
 
 
-<a class="mod-card" href="/moment_e_docs/report">
+<a class="mod-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfeSER1IrX80bqywn5VV0KzoYCFALkX3o317hLUoBS60JlysA/viewform" target="_blank">
   <div class="mod-badge mod-badge-5">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#2a5c28" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
   </div>
