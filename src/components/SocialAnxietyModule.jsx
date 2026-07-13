@@ -93,7 +93,22 @@ const pages = [
   {
     type: 'example',
     title: 'Example 1: The Boss Situation',
-    emoji: '💼',
+    illustration: (
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" rx="24" fill="#EBF3FB"/>
+        {/* desk */}
+        <rect x="20" y="78" width="80" height="8" rx="3" fill="#1B3F6E"/>
+        <rect x="28" y="86" width="6" height="16" rx="2" fill="#1B3F6E"/>
+        <rect x="86" y="86" width="6" height="16" rx="2" fill="#1B3F6E"/>
+        {/* monitor */}
+        <rect x="38" y="46" width="44" height="30" rx="4" fill="#2E6DA4"/>
+        <rect x="42" y="50" width="36" height="22" rx="2" fill="#A8D0F0"/>
+        <rect x="55" y="76" width="10" height="4" rx="1" fill="#2E6DA4"/>
+        {/* person */}
+        <circle cx="60" cy="30" r="10" fill="#2E6DA4"/>
+        <path d="M44 46c0-8.837 7.163-14 16-14s16 5.163 16 14" fill="#1B3F6E"/>
+      </svg>
+    ),
     situation: 'I had to talk to my boss.',
     physiological: 'The physical symptoms I experienced were pins and needles and sweaty palms.',
     behavioral: 'I tried to cut the conversation short. I was shaking.',
@@ -102,7 +117,20 @@ const pages = [
   {
     type: 'example',
     title: 'Example 2: Ordering a Coffee',
-    emoji: '☕',
+    illustration: (
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" rx="24" fill="#EBF3FB"/>
+        {/* cup */}
+        <path d="M38 50h44l-6 36H44L38 50z" fill="#2E6DA4"/>
+        <rect x="38" y="44" width="44" height="8" rx="3" fill="#1B3F6E"/>
+        {/* handle */}
+        <path d="M82 58c8 0 12 4 12 10s-4 10-12 10" stroke="#1B3F6E" strokeWidth="4" strokeLinecap="round" fill="none"/>
+        {/* steam */}
+        <path d="M52 38c0-4 4-4 4-8" stroke="#A8D0F0" strokeWidth="3" strokeLinecap="round"/>
+        <path d="M60 36c0-4 4-4 4-8" stroke="#A8D0F0" strokeWidth="3" strokeLinecap="round"/>
+        <path d="M68 38c0-4 4-4 4-8" stroke="#A8D0F0" strokeWidth="3" strokeLinecap="round"/>
+      </svg>
+    ),
     situation: 'I wanted to order a coffee at a busy café.',
     physiological: 'My voice came out quieter than I intended and my hands were trembling slightly.',
     behavioral: 'I rehearsed my order over and over in my head before reaching the counter.',
@@ -111,7 +139,21 @@ const pages = [
   {
     type: 'example',
     title: 'Example 3: The Grocery Store',
-    emoji: '🛒',
+    illustration: (
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="120" rx="24" fill="#EBF3FB"/>
+        {/* cart body */}
+        <path d="M30 36h8l10 38h34l8-28H46" stroke="#1B3F6E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        {/* wheels */}
+        <circle cx="58" cy="82" r="6" fill="#2E6DA4"/>
+        <circle cx="82" cy="82" r="6" fill="#2E6DA4"/>
+        {/* items in cart */}
+        <rect x="52" y="52" width="12" height="14" rx="2" fill="#A8D0F0"/>
+        <rect x="68" y="54" width="10" height="12" rx="2" fill="#5BA4D4"/>
+        {/* handle */}
+        <path d="M22 36h10" stroke="#1B3F6E" strokeWidth="4" strokeLinecap="round"/>
+      </svg>
+    ),
     situation: 'I ran into an acquaintance unexpectedly at the grocery store.',
     physiological: 'I felt a wave of nausea and my mind went completely blank.',
     behavioral: 'I turned into a different aisle to avoid them and left the shop early.',
