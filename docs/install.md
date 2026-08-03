@@ -32,10 +32,7 @@ hide_title: true
 
 </div>
 
-<div class="install-help" style={{marginTop:'2rem'}}>
-  Message from Dr. Amir
-</div>
-<p style={{textAlign:'center', marginBottom:'0.75rem'}}>Listen to this message for information about the consent form</p>
+<p style={{textAlign:'center', fontSize:'1.15rem', fontWeight:600, marginTop:'2rem', marginBottom:'0.75rem'}}>Listen to this message from Dr. Amir for information about the consent form</p>
 <div style={{display:'flex', justifyContent:'center', marginBottom:'1.5rem'}}>
   <audio controls src="/moment_e_docs/audio/amir-consent-intro.mp3" style={{width:'100%', maxWidth:'420px'}}>
     Your browser does not support the audio element.
