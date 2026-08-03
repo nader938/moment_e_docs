@@ -37,4 +37,14 @@ hide_title: true
 </div>
 <a class="report-submit-btn" href="https://github.com/nader938/moment_e_issues/issues/new" target="_blank">Submit an issue</a>
 
+<div class="install-help" style={{marginTop:'2rem'}}>
+  Message from Dr. Amir
+</div>
+<p style={{textAlign:'center', marginBottom:'0.75rem'}}>Listen to this message for information about the consent form</p>
+<div style={{display:'flex', justifyContent:'center', marginBottom:'1.5rem'}}>
+  <audio controls src="/moment_e_docs/audio/amir-consent-intro.mp3" style={{width:'100%', maxWidth:'420px'}}>
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 </div>
