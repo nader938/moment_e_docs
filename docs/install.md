@@ -32,11 +32,6 @@ hide_title: true
 
 </div>
 
-<div class="install-help">
-  Having trouble downloading it?
-</div>
-<a class="report-submit-btn" href="https://github.com/nader938/moment_e_issues/issues/new" target="_blank">Submit an issue</a>
-
 <div class="install-help" style={{marginTop:'2rem'}}>
   Message from Dr. Amir
 </div>
@@ -46,5 +41,10 @@ hide_title: true
     Your browser does not support the audio element.
   </audio>
 </div>
+
+<div class="install-help">
+  Having trouble downloading it?
+</div>
+<a class="report-submit-btn" href="https://github.com/nader938/moment_e_issues/issues/new" target="_blank">Submit an issue</a>
 
 </div>
