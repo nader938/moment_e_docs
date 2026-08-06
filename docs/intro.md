@@ -15,7 +15,7 @@ slug: /
 
 <div class="home-grid">
 
-<a class="home-card" href="/moment_e_docs/install">
+<a class="home-card" href="/moment_e_docs/get-started">
   <div class="home-card-icon mod-badge-1">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 16l-4-4M12 16l4-4" stroke="#1a5f8e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><path d="M4 20h16" stroke="#1a5f8e" strokeWidth="1.8" strokeLinecap="round"/></svg>
   </div>
