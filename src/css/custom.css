@@ -1369,3 +1369,17 @@ html:has(.home-page) footer.footer {
     font-size: 15px !important;
   }
 }
+
+/* ── Get Started expandable step ── */
+.get-started-step-panel {
+  display: none;
+}
+.get-started-step-checkbox:checked ~ .get-started-step-panel {
+  display: flex;
+}
+.get-started-step .mod-chev {
+  transition: transform 0.2s;
+}
+.get-started-step-checkbox:checked ~ label .mod-chev {
+  transform: rotate(90deg);
+}
