@@ -1383,3 +1383,31 @@ html:has(.home-page) footer.footer {
 .get-started-step-checkbox:checked ~ label .mod-chev {
   transform: rotate(90deg);
 }
+
+/* ── Site-wide soft blue background + bottom wave ── */
+html {
+  background-color: #fbfdfe;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(190, 226, 224, 0.35) 0%, rgba(190, 226, 224, 0) 42%),
+    radial-gradient(circle at 88% 18%, rgba(200, 222, 248, 0.4) 0%, rgba(200, 222, 248, 0) 45%),
+    radial-gradient(circle at 20% 88%, rgba(212, 233, 250, 0.45) 0%, rgba(212, 233, 250, 0) 50%),
+    radial-gradient(circle at 90% 92%, rgba(190, 218, 240, 0.35) 0%, rgba(190, 218, 240, 0) 48%),
+    linear-gradient(160deg, #fdfeff 0%, #f5fafd 50%, #eaf3fa 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100%;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDIwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHBhdGggZD0iTTAsMTEwIEMzMjAsMzAgNDgwLDE3MCA4MDAsMTIwIEMxMTIwLDcwIDEyODAsMTgwIDE2MDAsOTUgTDE2MDAsMjAwIEwwLDIwMCBaIiBmaWxsPSIjYmNkY2VlIiBmaWxsLW9wYWNpdHk9IjAuNSIvPgogIDxwYXRoIGQ9Ik0wLDE0NSBDMzYwLDgwIDU4MCwxOTUgODUwLDE1MCBDMTE4MCwxMDUgMTMyMCwyMDUgMTYwMCwxNDUgTDE2MDAsMjAwIEwwLDIwMCBaIiBmaWxsPSIjYTljZmU2IiBmaWxsLW9wYWNpdHk9IjAuNCIvPgo8L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 0;
+}
