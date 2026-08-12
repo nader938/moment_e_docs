@@ -3,7 +3,6 @@ const sidebars = {
   docs: [
     { type: 'doc', id: 'intro', label: 'Home' },
     { type: 'doc', id: 'get-started', label: 'Get Started' },
-    { type: 'doc', id: 'introduction', label: 'Introduction' },
     { type: 'doc', id: 'install', label: 'Install the App' },
     {
       type: 'category',
